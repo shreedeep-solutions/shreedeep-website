@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shreedeep Solutions - Expert Accounting & Management Services</title>
     <style>
+        :root {
+            --primary-color: #4a90e2;
+            --primary-dark: #357abd;
+            --secondary-color: #667eea;
+            --accent-color: #764ba2;
+            --text-color: #333;
+            --text-light: #666;
+            --background: #ffffff;
+            --background-alt: #f8f9fa;
+            --card-background: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow-hover: rgba(0, 0, 0, 0.15);
+            --border: #e0e0e0;
+            --success: #28a745;
+            --whatsapp: #25D366;
+        }
+
+        [data-theme="dark"] {
+            --text-color: #e0e0e0;
+            --text-light: #b0b0b0;
+            --background: #1a1a1a;
+            --background-alt: #2d2d2d;
+            --card-background: #2d2d2d;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --shadow-hover: rgba(0, 0, 0, 0.4);
+            --border: #404040;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,8 +42,9 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-color);
+            background: var(--background);
+            transition: all 0.3s ease;
         }
 
         .container {
@@ -26,9 +55,9 @@
 
         /* Header */
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--card-background);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 20px var(--shadow);
             position: fixed;
             width: 100%;
             top: 0;
@@ -46,26 +75,27 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #4a90e2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px var(--shadow);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: var(--text-color);
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
         }
 
         .nav-links a:hover {
-            color: #4a90e2;
+            color: var(--primary-color);
         }
 
         .nav-links a::after {
@@ -75,12 +105,29 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: #4a90e2;
+            background-color: var(--primary-color);
             transition: width 0.3s ease;
         }
 
         .nav-links a:hover::after {
             width: 100%;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
         }
 
         /* Hero Section */
@@ -93,6 +140,7 @@
             color: white;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
         }
 
         .hero::before {
@@ -126,7 +174,7 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #4a90e2, #357abd);
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
             color: white;
             padding: 15px 30px;
             text-decoration: none;
@@ -135,6 +183,7 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+            margin: 0 10px;
         }
 
         .cta-button:hover {
@@ -142,21 +191,31 @@
             box-shadow: 0 6px 20px rgba(74, 144, 226, 0.6);
         }
 
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .cta-button.secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
         /* Sections */
         .section {
             padding: 80px 0;
-            background: white;
+            background: var(--background);
         }
 
         .section:nth-child(even) {
-            background: #f8f9fa;
+            background: var(--background-alt);
         }
 
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #333;
+            color: var(--text-color);
             position: relative;
         }
 
@@ -165,7 +224,7 @@
             position: absolute;
             width: 80px;
             height: 4px;
-            background: linear-gradient(45deg, #4a90e2, #357abd);
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
@@ -181,23 +240,41 @@
         }
 
         .service-card {
-            background: white;
+            background: var(--card-background);
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px var(--shadow);
             transition: all 0.3s ease;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 144, 226, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px var(--shadow-hover);
         }
 
         .service-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(45deg, #4a90e2, #357abd);
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -205,16 +282,21 @@
             margin-bottom: 1rem;
             font-size: 1.5rem;
             color: white;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .service-card h3 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: #333;
+            color: var(--text-color);
         }
 
         .service-card p {
-            color: #666;
+            color: var(--text-light);
             line-height: 1.6;
         }
 
@@ -225,13 +307,40 @@
             text-align: center;
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #555;
+            color: var(--text-light);
+        }
+
+        /* Operating Hours */
+        .operating-hours {
+            background: var(--card-background);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 5px 15px var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .operating-hours h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .hours-detail {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .closed-day {
+            color: var(--text-light);
+            font-style: italic;
         }
 
         /* Contact Section */
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -239,9 +348,10 @@
         .contact-item {
             text-align: center;
             padding: 1.5rem;
-            background: white;
+            background: var(--card-background);
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px var(--shadow);
+            border: 1px solid var(--border);
         }
 
         .contact-item.clickable {
@@ -251,13 +361,13 @@
 
         .contact-item.clickable:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px var(--shadow-hover);
         }
 
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(45deg, #4a90e2, #357abd);
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -267,35 +377,200 @@
             color: white;
         }
 
-        .address-text {
-            color: #4a90e2;
+        .phone-numbers {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .phone-number, .address-text {
+            color: var(--primary-color);
             font-weight: 500;
             text-decoration: none;
             display: block;
-            margin-top: 0.5rem;
         }
 
-        .address-text:hover {
+        .phone-number:hover, .address-text:hover {
             text-decoration: underline;
-        }
-
-        .phone-number {
-            color: #4a90e2;
-            font-weight: 500;
-            text-decoration: none;
         }
 
         .map-hint {
             font-size: 0.9rem;
-            color: #666;
+            color: var(--text-light);
             margin-top: 0.5rem;
             font-style: italic;
         }
 
+        /* Forms */
+        .form-container {
+            background: var(--card-background);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow);
+            margin-top: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--background);
+            color: var(--text-color);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: var(--whatsapp);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: var(--card-background);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close {
+            color: var(--text-light);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: var(--text-color);
+        }
+
         /* Footer */
         footer {
-            background: #333;
-            color: white;
+            background: var(--text-color);
+            color: var(--background);
             text-align: center;
             padding: 2rem 0;
         }
@@ -329,9 +604,18 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                display: block;
+                margin: 10px 0;
+            }
         }
 
-        /* Floating elements */
+        /* Floating shapes */
         .floating-shapes {
             position: absolute;
             width: 100%;
@@ -384,6 +668,53 @@
                 transform: translateY(-20px);
             }
         }
+
+        /* Loading States */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid transparent;
+            border-top-color: var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Success Message */
+        .success-message {
+            background: var(--success);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -396,6 +727,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button></li>
             </ul>
         </nav>
     </header>
@@ -411,6 +743,7 @@
             <h1>Shreedeep Solutions</h1>
             <p>Expert Accounting & Management Services for Your Success</p>
             <a href="#services" class="cta-button">Explore Our Services</a>
+            <a href="#" class="cta-button secondary" onclick="openEstimateModal()">Get Estimate</a>
         </div>
     </section>
 
@@ -419,32 +752,32 @@
         <div class="container">
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" onclick="openServiceModal('coop-accounting')">
                     <div class="service-icon">🏢</div>
                     <h3>Cooperative Housing Society Accounting</h3>
                     <p>Comprehensive accounting solutions tailored specifically for cooperative housing societies, ensuring accurate financial management and compliance.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" onclick="openServiceModal('society-mgmt')">
                     <div class="service-icon">📊</div>
                     <h3>Society Management</h3>
                     <p>Complete management services for housing societies including maintenance tracking, member communication, and administrative support.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" onclick="openServiceModal('audit')">
                     <div class="service-icon">🔍</div>
                     <h3>Audit Services</h3>
                     <p>Professional audit services for housing societies, ensuring transparency and regulatory compliance with detailed reporting.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" onclick="openServiceModal('tds')">
                     <div class="service-icon">📋</div>
                     <h3>TDS Returns</h3>
                     <p>Expert handling of TDS return filing and compliance, ensuring timely submissions and avoiding penalties with accurate documentation.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" onclick="openServiceModal('gst')">
                     <div class="service-icon">💼</div>
                     <h3>GST Returns & Audit</h3>
                     <p>Complete GST compliance solutions including return filing, audit support, and advisory services to keep your business GST-ready.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" onclick="openServiceModal('itr')">
                     <div class="service-icon">👤</div>
                     <h3>Individual ITR</h3>
                     <p>Professional income tax return preparation for individuals, maximizing deductions and ensuring compliance with tax regulations.</p>
@@ -464,6 +797,15 @@
                 <br>
                 <p>Our mission is to simplify financial management for our clients while ensuring complete transparency and regulatory compliance across all services.</p>
             </div>
+            
+            <div class="operating-hours">
+                <h3>📅 Operating Hours</h3>
+                <div class="hours-detail">Monday - Saturday: 9:00 AM - 6:00 PM</div>
+                <div class="hours-detail closed-day">Tuesday: Closed</div>
+                <div class="hours-detail" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">
+                    💡 Please call before visiting for personalized attention
+                </div>
+            </div>
         </div>
     </section>
 
@@ -472,16 +814,21 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-info">
-                <div class="contact-item clickable" onclick="makePhoneCall()">
+                <div class="contact-item">
                     <div class="contact-icon">📞</div>
                     <h3>Call Us</h3>
-                    <p>Ready to discuss your requirements? Give us a call on <a href="tel:+919004264282" class="phone-number">+91 9004264282</a>.</p>
-                    <div class="map-hint">Click to call directly</div>
+                    <p>Ready to discuss your requirements? Choose any number to call:</p>
+                    <div class="phone-numbers">
+                        <a href="tel:+919004264282" class="phone-number">📱 +91 9004264282</a>
+                        <a href="tel:+919004262639" class="phone-number">📱 +91 9004262639</a>
+                    </div>
+                    <div class="map-hint">Both numbers available on WhatsApp Business</div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">✉️</div>
                     <h3>Email Us</h3>
-                    <p>Send us your queries on shreedeepsolutions@gmail.com and we'll get back to you with detailed solutions.</p>
+                    <p>Send us your queries and we'll get back to you with detailed solutions.</p>
+                    <a href="mailto:shreedeepsolutions@gmail.com" class="phone-number">shreedeepsolutions@gmail.com</a>
                 </div>
                 <div class="contact-item clickable" onclick="openGoogleMaps()">
                     <div class="contact-icon">🏢</div>
@@ -494,10 +841,11 @@
                     </a>
                     <div class="map-hint">Click to open in Google Maps</div>
                 </div>
-                <div class="contact-item">
+                <div class="contact-item clickable" onclick="openContactModal()">
                     <div class="contact-icon">💬</div>
-                    <h3>Consultation</h3>
-                    <p>Free initial consultation to understand your requirements and suggest the best solutions.</p>
+                    <h3>Quick Contact</h3>
+                    <p>Fill out our contact form for general inquiries and we'll respond within 24 hours.</p>
+                    <div class="map-hint">Click to open contact form</div>
                 </div>
             </div>
         </div>
@@ -510,70 +858,41 @@
         </div>
     </footer>
 
-    <script>
-        // Function to make phone call
-        function makePhoneCall() {
-            window.location.href = 'tel:+919004264282';
-        }
+    <!-- WhatsApp Floating Button -->
+    <a href="#" class="whatsapp-float" onclick="openWhatsAppModal()">
+        💬
+    </a>
 
-        // Function to open Google Maps
-        function openGoogleMaps() {
-            const address = "D204, Shankar Sheela CHS Ltd., Sector-8, Airoli, Navi Mumbai - 400708";
-            const plusCode = "4XWV+JP Navi Mumbai, Maharashtra";
+    <!-- Estimate Modal -->
+    <div id="estimateModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('estimateModal')">&times;</span>
+            <h2>Get Society Accounting Estimate</h2>
+            <p>Fill out the details below and we'll send you a customized estimate for your society's accounting and management needs.</p>
             
-            // Try to open with plus code first (more accurate), fallback to address
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(plusCode)}`;
-            
-            // Open in new tab
-            window.open(mapsUrl, '_blank');
-        }
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Header background change on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
-
-        // Add animation on scroll for service cards
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Initially hide service cards
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.6s ease';
-            observer.observe(card);
-        });
-    </script>
-</body>
-</html>
+            <form id="estimateForm" onsubmit="submitEstimate(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="contactName">Contact Person Name *</label>
+                        <input type="text" id="contactName" name="contactName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="societyName">Society Name *</label>
+                    <input type="text" id="societyName" name="societyName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="societyAddress">Society Address *</label>
+                    <textarea id="societyAddress" name="societyAddress" required placeholder="Enter complete address with area and pincode"></textarea>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="totalUnits">Total Units (Flats) *</label>
+                        <input type="number" id="totalUnits" name="total
