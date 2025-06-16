@@ -244,6 +244,16 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
+        .contact-item.clickable {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item.clickable:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
         .contact-icon {
             width: 50px;
             height: 50px;
@@ -255,6 +265,25 @@
             margin: 0 auto 1rem;
             font-size: 1.2rem;
             color: white;
+        }
+
+        .address-text {
+            color: #4a90e2;
+            font-weight: 500;
+            text-decoration: none;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .address-text:hover {
+            text-decoration: underline;
+        }
+
+        .map-hint {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
         }
 
         /* Footer */
@@ -397,7 +426,7 @@
                 <div class="service-card">
                     <div class="service-icon">🔍</div>
                     <h3>Audit Services</h3>
-                    <p>Professional audit services for housing societies and businesses, ensuring transparency and regulatory compliance with detailed reporting.</p>
+                    <p>Professional audit services for housing societies, ensuring transparency and regulatory compliance with detailed reporting.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📋</div>
@@ -447,10 +476,16 @@
                     <h3>Email Us</h3>
                     <p>Send us your queries on shreedeepsolutions@gmail.com and we'll get back to you with detailed solutions.</p>
                 </div>
-                <div class="contact-item">
+                <div class="contact-item clickable" onclick="openGoogleMaps()">
                     <div class="contact-icon">🏢</div>
                     <h3>Visit Our Office</h3>
                     <p>Schedule an appointment to meet our team and discuss your needs in person.</p>
+                    <a href="#" class="address-text" onclick="openGoogleMaps(); return false;">
+                        D204, Shankar Sheela CHS Ltd.,<br>
+                        Sector-8, Airoli,<br>
+                        Navi Mumbai - 400708
+                    </a>
+                    <div class="map-hint">Click to open in Google Maps</div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">💬</div>
@@ -469,6 +504,18 @@
     </footer>
 
     <script>
+        // Function to open Google Maps
+        function openGoogleMaps() {
+            const address = "D204, Shankar Sheela CHS Ltd., Sector-8, Airoli, Navi Mumbai - 400708";
+            const plusCode = "4XWV+JP Navi Mumbai, Maharashtra";
+            
+            // Try to open with plus code first (more accurate), fallback to address
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(plusCode)}`;
+            
+            // Open in new tab
+            window.open(mapsUrl, '_blank');
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
