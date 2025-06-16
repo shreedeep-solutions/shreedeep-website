@@ -279,6 +279,12 @@
             text-decoration: underline;
         }
 
+        .phone-number {
+            color: #4a90e2;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
         .map-hint {
             font-size: 0.9rem;
             color: #666;
@@ -466,10 +472,11 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-info">
-                <div class="contact-item">
+                <div class="contact-item clickable" onclick="makePhoneCall()">
                     <div class="contact-icon">📞</div>
                     <h3>Call Us</h3>
-                    <p>Ready to discuss your requirements? Give us a call on +91 9004264282.</p>
+                    <p>Ready to discuss your requirements? Give us a call on <a href="tel:+919004264282" class="phone-number">+91 9004264282</a>.</p>
+                    <div class="map-hint">Click to call directly</div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">✉️</div>
@@ -504,6 +511,11 @@
     </footer>
 
     <script>
+        // Function to make phone call
+        function makePhoneCall() {
+            window.location.href = 'tel:+919004264282';
+        }
+
         // Function to open Google Maps
         function openGoogleMaps() {
             const address = "D204, Shankar Sheela CHS Ltd., Sector-8, Airoli, Navi Mumbai - 400708";
