@@ -1,579 +1,1136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shreedeep Solutions - Expert Accounting & Management Services</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shreedeep Solutions | Housing Society Accounting, Audit &amp; Compliance – Airoli, Navi Mumbai</title>
+<meta name="description" content="Shreedeep Solutions provides accounting, management, statutory audit, TDS, GST and ITR services to 120+ co-operative housing societies in Airoli and across Navi Mumbai.">
+<meta name="theme-color" content="#7D2435">
+<link rel="icon" type="image/jpeg" href="logo.jpg">
+<link rel="apple-touch-icon" href="logo.jpg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shreedeep Solutions – Society Accounting &amp; Compliance">
+<meta property="og:description" content="Accounting, audit, TDS, GST &amp; ITR services for co-operative housing societies in Navi Mumbai.">
+<meta property="og:image" content="https://www.shreedeepsolutions.com/logo.jpg">
+<meta property="og:url" content="https://www.shreedeepsolutions.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AccountingService","name":"Shreedeep Solutions","image":"https://www.shreedeepsolutions.com/logo.jpg","url":"https://www.shreedeepsolutions.com/","email":"shreedeepsolutions@gmail.com","telephone":["+91-9004264282","+91-9004262639"],"address":{"@type":"PostalAddress","streetAddress":"D204, Shankar Sheela CHS Ltd., Sector-8, Airoli","addressLocality":"Navi Mumbai","addressRegion":"Maharashtra","postalCode":"400708","addressCountry":"IN"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"18:00"}],"areaServed":"Navi Mumbai"}
+</script>
+<script>
+document.documentElement.classList.add('js');
+try{if(localStorage.getItem('ss-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}
+</script>
+<style>
+:root{--maroon:#A8384B;--maroon-d:#7D2435;--maroon-dd:#4A1521;--gold:#C9A24A;--gold-l:#E9D9A8;--bg:#FBF8F3;--bg-alt:#F4EDE3;--card:#FFFFFF;--text:#2A1A1E;--muted:#6B5A5E;--border:#E8DDD0;--accent:#A8384B;--shadow:0 10px 30px rgba(74,21,33,.08);--shadow-h:0 18px 40px rgba(74,21,33,.16);--radius:16px}
+[data-theme="dark"]{--bg:#151012;--bg-alt:#1C1618;--card:#241C1F;--text:#F2EAE5;--muted:#B9A9AB;--border:#3A2D31;--accent:#E8899A;--shadow:0 10px 30px rgba(0,0,0,.35);--shadow-h:0 18px 40px rgba(0,0,0,.5)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;transition:background .3s,color .3s;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.25}
+h4{line-height:1.35}
+a{color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1180px;margin:0 auto;padding:0 20px}
+section{scroll-margin-top:84px}
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
+/* Top bar */
+.topbar{background:var(--maroon-dd);color:var(--gold-l);font-size:.85rem}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}
+.status{display:inline-flex;align-items:center;gap:8px}
+.dot{width:9px;height:9px;border-radius:50%;background:#9a8a8c}
+.dot.open{background:#4ade80;animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(74,222,128,.6)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+.tb-right{display:flex;gap:20px}
+.topbar a{text-decoration:none;color:var(--gold-l)}
+.topbar a:hover{color:#fff}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+/* Header */
+header{position:sticky;top:0;z-index:900;background:var(--card);border-bottom:1px solid var(--border);transition:box-shadow .3s,background .3s}
+header.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.08)}
+nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:50px;height:50px;border-radius:50%;background:#fff;border:2px solid var(--gold);object-fit:cover}
+.brand-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--accent);line-height:1.1;display:block}
+.brand-sub{font-size:.7rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.nav-links{display:flex;list-style:none;gap:26px;align-items:center}
+.nav-links a{text-decoration:none;font-weight:500;font-size:.95rem;position:relative;padding:4px 0}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .3s}
+.nav-links a:hover::after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.icon-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer;transition:.3s}
+.icon-btn:hover{border-color:var(--gold);color:var(--gold)}
+.i-sun{display:none}
+[data-theme="dark"] .i-sun{display:block}
+[data-theme="dark"] .i-moon{display:none}
+.menu-btn{display:none}
 
-        /* Header */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:50px;font-weight:600;font-size:.95rem;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:all .3s;font-family:inherit}
+.btn .ic{width:18px;height:18px}
+.btn-gold{background:linear-gradient(135deg,#D9B65E,#B8892F);color:#3A0F18;box-shadow:0 6px 18px rgba(201,162,74,.35)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(201,162,74,.5)}
+.btn-maroon{background:var(--maroon);color:#fff}
+.btn-maroon:hover{background:var(--maroon-d);transform:translateY(-2px)}
+.btn-outline{border-color:rgba(255,255,255,.6);color:#fff;background:transparent}
+.btn-outline:hover{background:#fff;color:var(--maroon-d)}
+.btn-ghost{border-color:var(--border);color:var(--text);background:transparent}
+.btn-ghost:hover{border-color:var(--gold)}
+.btn-wa{background:#25D366;color:#fff}
+.btn-wa:hover{background:#1ebe5b;transform:translateY(-2px)}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.btn-sm{padding:9px 18px;font-size:.88rem}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
+/* Hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 80% 20%,rgba(201,162,74,.18),transparent 45%),linear-gradient(135deg,var(--maroon-dd) 0%,var(--maroon-d) 55%,var(--maroon) 100%);padding:90px 0 120px}
+.hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(201,162,74,.15);border:1px solid rgba(201,162,74,.45);color:var(--gold-l);padding:6px 14px;border-radius:50px;font-size:.82rem;font-weight:600;letter-spacing:.04em;margin-bottom:22px}
+.eyebrow .ic{width:16px;height:16px}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3.4rem);margin-bottom:18px}
+.hero h1 em{color:var(--gold);font-style:italic}
+.lead{font-size:1.12rem;opacity:.92;max-width:560px;margin-bottom:30px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.formula{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:.92rem;color:var(--gold-l)}
+.formula .chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:4px 12px;border-radius:50px;color:#fff}
+.formula i{font-style:italic;font-family:'Playfair Display',serif}
+.hero-visual{display:grid;place-items:center}
+.seal{position:relative;width:min(340px,80vw);aspect-ratio:1}
+.seal img{position:absolute;top:8%;left:8%;width:84%;height:84%;border-radius:50%;background:#fff;object-fit:cover;box-shadow:0 25px 60px rgba(0,0,0,.35);animation:floaty 6s ease-in-out infinite}
+.seal::before{content:'';position:absolute;inset:0;border-radius:50%;border:2px dashed rgba(201,162,74,.65);animation:spin 40s linear infinite}
+.seal::after{content:'';position:absolute;inset:3%;border-radius:50%;border:1px solid rgba(201,162,74,.35)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes floaty{50%{transform:translateY(-10px)}}
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #4a90e2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
+/* Stats */
+.stats{position:relative;z-index:2;margin-top:-60px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow-h);border:1px solid var(--border);overflow:hidden}
+.stat{padding:26px 18px;text-align:center;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat b{display:block;font-family:'Playfair Display',serif;font-size:2.1rem;color:var(--accent);line-height:1.2}
+.stat span{font-size:.88rem;color:var(--muted)}
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+/* Sections */
+.section{padding:90px 0}
+.section.alt{background:var(--bg-alt)}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 50px}
+.kicker{display:inline-block;color:var(--gold);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);margin-bottom:12px}
+.sec-head p{color:var(--muted)}
+.divider{width:70px;height:3px;background:linear-gradient(90deg,var(--maroon),var(--gold));margin:16px auto 0;border-radius:2px}
 
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
+/* Cards */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);transition:transform .35s,box-shadow .35s,border-color .35s;position:relative;overflow:hidden}
+.card h3{font-size:1.25rem;margin-bottom:10px}
+.card p{color:var(--muted);font-size:.95rem}
+.service{cursor:pointer}
+.service::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--maroon),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.service:hover,.service:focus-visible{transform:translateY(-8px);box-shadow:var(--shadow-h);border-color:rgba(201,162,74,.5);outline:none}
+.service:hover::before,.service:focus-visible::before{transform:scaleX(1)}
+.s-icon{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--maroon),var(--maroon-d));color:var(--gold-l);margin-bottom:18px;transition:transform .35s}
+.s-icon .ic{width:26px;height:26px}
+.service:hover .s-icon{transform:rotate(-6deg) scale(1.08)}
+.more{margin-top:16px;display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--accent);font-size:.9rem}
+.more .ic{width:16px;height:16px;transition:transform .3s}
+.service:hover .more .ic{transform:translateX(4px)}
+.badge-top{position:absolute;top:16px;right:16px;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(201,162,74,.18);color:#8f6a1f;padding:4px 10px;border-radius:50px}
+[data-theme="dark"] .badge-top{color:var(--gold-l)}
 
-        .nav-links a:hover {
-            color: #4a90e2;
-        }
+/* Values */
+.eq{text-align:center;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.3rem,2.6vw,1.8rem);color:var(--accent);margin-bottom:36px}
+.eq b{color:var(--gold)}
+.value{text-align:center}
+.value:hover{transform:translateY(-6px);box-shadow:var(--shadow-h)}
+.v-icon{width:66px;height:66px;margin:0 auto 16px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--gold);color:var(--accent)}
+.v-icon .ic{width:28px;height:28px}
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: #4a90e2;
-            transition: width 0.3s ease;
-        }
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.steps::before{content:'';position:absolute;top:29px;left:12%;right:12%;height:2px;background:repeating-linear-gradient(90deg,var(--gold) 0 8px,transparent 8px 16px)}
+.step{text-align:center;padding:0 10px}
+.step-num{width:58px;height:58px;margin:0 auto 18px;border-radius:50%;background:var(--maroon);color:#fff;display:grid;place-items:center;font-weight:700;font-size:1.2rem;position:relative;z-index:1;box-shadow:0 0 0 6px var(--bg),0 0 0 8px rgba(201,162,74,.55)}
+.step h3{font-size:1.12rem;margin-bottom:8px}
+.step p{color:var(--muted);font-size:.93rem}
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+/* Calendar */
+.cal-filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:30px}
+.chip-btn{padding:8px 18px;border-radius:50px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;font-weight:500;font-family:inherit;font-size:.9rem;transition:.25s}
+.chip-btn:hover{border-color:var(--gold)}
+.chip-btn.active{background:var(--maroon);border-color:var(--maroon);color:#fff}
+.cal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.due{display:flex;gap:16px;align-items:flex-start;padding:20px}
+.due:hover{transform:translateY(-4px);box-shadow:var(--shadow-h)}
+.due.urgent-card{border-left:4px solid #d14b4b}
+.due-date{flex-shrink:0;width:64px;text-align:center;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--card)}
+.due-date .m{background:var(--maroon);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;padding:3px 0;text-transform:uppercase}
+.due-date .d{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;padding:2px 0 0}
+.due-date .y{font-size:.68rem;color:var(--muted);padding-bottom:3px}
+.due-body{flex:1;min-width:0}
+.due-body h4{font-size:.97rem;margin-bottom:6px}
+.due-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.78rem}
+.tag{padding:2px 9px;border-radius:50px;background:var(--bg);color:var(--muted);font-weight:600}
+.left{font-weight:700;color:var(--muted)}
+.left.urgent{color:#d14b4b}
+.left.soon{color:#b8892f}
+.gcal{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:.8rem;font-weight:600;color:var(--accent);text-decoration:none}
+.gcal .ic{width:15px;height:15px}
+.gcal:hover{text-decoration:underline}
+.cal-note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:26px;max-width:760px;margin-left:auto;margin-right:auto}
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
+/* About */
+.about-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:40px;align-items:start}
+.about-text h2{font-size:clamp(1.8rem,3.2vw,2.4rem);margin:6px 0 16px}
+.about-text p{color:var(--muted);margin-bottom:16px;font-size:1.02rem}
+.checks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.checks li{display:flex;gap:10px;align-items:flex-start;font-weight:500;font-size:.95rem}
+.checks .ic{color:var(--gold);width:20px;height:20px;margin-top:2px}
+.hours-card h3{display:flex;align-items:center;gap:10px;margin-bottom:16px;font-size:1.3rem}
+.hours-card h3 .ic{color:var(--gold)}
+.pill{font-family:'Inter',sans-serif;font-size:.72rem;padding:3px 10px;border-radius:50px;font-weight:700;margin-left:auto}
+.pill-open{background:rgba(74,222,128,.15);color:#16a34a}
+.pill-closed{background:rgba(209,75,75,.12);color:#d14b4b}
+.hours-row{display:flex;justify-content:space-between;padding:9px 12px;border-radius:10px;font-size:.95rem}
+.hours-row.today{background:var(--bg-alt);font-weight:700}
+.hours-row.closed span:last-child{color:#d14b4b;font-weight:600}
+.hours-tip{margin-top:16px;padding:14px;border-radius:12px;background:rgba(201,162,74,.12);border:1px dashed rgba(201,162,74,.6);font-size:.9rem}
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-        }
+/* Estimate */
+.est-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start}
+.est-info h2{font-size:clamp(1.8rem,3.2vw,2.4rem);margin:6px 0 14px}
+.est-info p{color:var(--muted);margin-bottom:20px}
+.est-points{list-style:none;display:grid;gap:12px;margin-bottom:26px}
+.est-points li{display:flex;gap:10px;align-items:flex-start;font-weight:500}
+.est-points .ic{color:var(--gold);width:20px;height:20px;margin-top:2px}
+.est-cta{display:flex;gap:10px;flex-wrap:wrap}
+.progress{display:flex;gap:8px;margin-bottom:26px}
+.progress .p{flex:1;text-align:center;font-size:.8rem;font-weight:600;color:var(--muted)}
+.progress .p i{display:block;height:5px;border-radius:5px;background:var(--border);margin-bottom:8px;transition:background .4s}
+.progress .p.done i,.progress .p.active i{background:linear-gradient(90deg,var(--maroon),var(--gold))}
+.progress .p.active{color:var(--accent)}
+.fstep{display:none}
+.fstep.active{display:block;animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-weight:600;font-size:.88rem;margin-bottom:6px}
+.fg input,.fg select,.fg textarea{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-family:inherit;font-size:.95rem;transition:border-color .25s,box-shadow .25s}
+.fg textarea{min-height:100px;resize:vertical}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,74,.2)}
+.fg.err input,.fg.err textarea{border-color:#d14b4b}
+.err-msg{color:#d14b4b;font-size:.8rem;margin-top:4px;display:none}
+.fg.err .err-msg{display:block}
+.total-units{padding:12px 14px;border-radius:10px;background:var(--bg-alt);font-weight:600;margin-bottom:16px;font-size:.92rem}
+.svc-label{display:block;font-weight:600;font-size:.88rem;margin-bottom:8px}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+.svc-opt{display:flex;align-items:center;gap:10px;padding:11px 14px;border:1.5px solid var(--border);border-radius:10px;cursor:pointer;font-size:.9rem;font-weight:500;transition:.2s}
+.svc-opt:has(input:checked){border-color:var(--gold);background:rgba(201,162,74,.1)}
+.svc-opt input{accent-color:var(--maroon);width:17px;height:17px}
+#svcErr{display:none;color:#d14b4b;font-size:.8rem;margin-bottom:12px}
+.f-nav{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap}
+.f-nav .btn{flex:1;min-width:140px}
+.form-msg{display:none;margin-top:16px;padding:14px;border-radius:10px;font-size:.92rem}
+.form-msg.ok{display:block;background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.5)}
+.form-msg.bad{display:block;background:rgba(209,75,75,.1);border:1px solid rgba(209,75,75,.5)}
+.spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.5);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 1s ease;
-        }
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.c-cards{display:grid;gap:16px}
+.c-card{display:flex;gap:16px;align-items:flex-start;padding:22px}
+.c-icon{width:48px;height:48px;border-radius:12px;background:rgba(168,56,75,.1);color:var(--accent);display:grid;place-items:center;flex-shrink:0}
+.c-card h3{font-size:1.1rem;margin-bottom:4px}
+.c-card p{font-size:.93rem}
+.c-links{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.c-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.num{font-weight:600;color:var(--accent);text-decoration:none;margin-right:4px}
+.num:hover{text-decoration:underline}
+.mini{font-size:.76rem;padding:4px 10px;border-radius:50px;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:5px}
+.mini .ic{width:13px;height:13px}
+.mini.wa{background:rgba(37,211,102,.14);color:#1a9e4b}
+.mini.call{background:rgba(168,56,75,.1);color:var(--accent)}
+.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);min-height:440px;position:relative;background:var(--bg-alt)}
+.map iframe{width:100%;height:100%;min-height:440px;border:0;display:block}
+.map-btns{position:absolute;bottom:16px;left:16px;display:flex;gap:10px;flex-wrap:wrap}
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-        }
+/* Footer */
+footer{background:var(--maroon-dd);color:#E9DCDD;padding:60px 0 0}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+.f-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.f-brand img{width:58px;height:58px;border-radius:50%;background:#fff;border:2px solid var(--gold);object-fit:cover}
+.f-brand b{font-family:'Playfair Display',serif;font-size:1.3rem;color:#fff}
+.f-tag{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-l);font-size:.95rem}
+footer h4{color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+footer ul{list-style:none}
+footer li{margin-bottom:8px;font-size:.92rem}
+footer a{text-decoration:none;color:#E9DCDD}
+footer a:hover{color:var(--gold-l)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding:20px 0;text-align:center;font-size:.85rem;color:#bfa9ad}
 
-        .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
+/* WhatsApp */
+.wa-float{position:fixed;right:24px;bottom:24px;z-index:950}
+.wa-btn{width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;border:none;cursor:pointer;display:grid;place-items:center;animation:waPulse 2.2s infinite;transition:transform .3s}
+.wa-btn:hover{transform:scale(1.08)}
+.wa-btn .ic{width:30px;height:30px}
+@keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.wa-panel{position:absolute;right:0;bottom:74px;width:290px;background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-h);overflow:hidden;opacity:0;transform:translateY(10px) scale(.97);pointer-events:none;transition:.25s}
+.wa-panel.open{opacity:1;transform:none;pointer-events:auto}
+.wa-head{background:#075E54;color:#fff;padding:16px}
+.wa-head b{display:block}
+.wa-head small{opacity:.85}
+.wa-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;text-decoration:none;border-bottom:1px solid var(--border);transition:background .2s}
+.wa-opt:last-child{border-bottom:none}
+.wa-opt:hover{background:var(--bg-alt)}
+.wa-opt .av{width:40px;height:40px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;flex-shrink:0}
+.wa-opt small{display:block;color:var(--muted)}
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #4a90e2, #357abd);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
-        }
+/* Mobile bar */
+.mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:940;background:var(--card);border-top:1px solid var(--border);box-shadow:0 -6px 20px rgba(0,0,0,.08);padding:8px 10px calc(8px + env(safe-area-inset-bottom))}
+.mbar-in{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px}
+.mbar a,.mbar button{display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 6px;border-radius:12px;font-weight:600;font-size:.88rem;text-decoration:none;border:none;font-family:inherit;cursor:pointer}
+.mbar .ic{width:18px;height:18px}
+.mb-call{background:rgba(168,56,75,.1);color:var(--accent)}
+.mb-wa{background:#25D366;color:#fff}
+.mb-est{background:linear-gradient(135deg,#D9B65E,#B8892F);color:#3A0F18}
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.6);
-        }
+/* Modal */
+.modal{position:fixed;inset:0;z-index:2000;background:rgba(20,8,12,.6);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-box{background:var(--card);border-radius:20px;max-width:620px;width:100%;max-height:88vh;overflow-y:auto;box-shadow:0 30px 70px rgba(0,0,0,.4);animation:pop .3s ease}
+@keyframes pop{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+.modal-top{background:linear-gradient(135deg,var(--maroon-dd),var(--maroon));color:#fff;padding:28px 30px;position:relative}
+.modal-top .s-icon{margin-bottom:12px;background:rgba(255,255,255,.12)}
+.modal-top h3{font-size:1.5rem}
+.modal-top p{opacity:.9;margin-top:6px;font-size:.95rem}
+.modal-close{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:none;background:rgba(255,255,255,.15);color:#fff;font-size:1.4rem;cursor:pointer;line-height:1}
+.modal-close:hover{background:rgba(255,255,255,.28)}
+.modal-body{padding:26px 30px 30px}
+.modal-body h4{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.incl{list-style:none;display:grid;gap:10px;margin-bottom:24px}
+.incl li{display:flex;gap:10px;align-items:flex-start}
+.incl .ic{color:var(--gold);width:19px;height:19px;margin-top:3px}
+.modal-actions{display:flex;gap:12px;flex-wrap:wrap}
 
-        /* Sections */
-        .section {
-            padding: 80px 0;
-            background: white;
-        }
+/* Reveal */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
 
-        .section:nth-child(even) {
-            background: #f8f9fa;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(45deg, #4a90e2, #357abd);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #e0e0e0;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #4a90e2, #357abd);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* About Section */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-        }
-
-        /* Contact Section */
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .contact-item {
-            text-align: center;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-item.clickable {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .contact-item.clickable:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #4a90e2, #357abd);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.2rem;
-            color: white;
-        }
-
-        .address-text {
-            color: #4a90e2;
-            font-weight: 500;
-            text-decoration: none;
-            display: block;
-            margin-top: 0.5rem;
-        }
-
-        .address-text:hover {
-            text-decoration: underline;
-        }
-
-        .phone-number {
-            color: #4a90e2;
-            font-weight: 500;
-            text-decoration: none;
-        }
-
-        .map-hint {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 0.5rem;
-            font-style: italic;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Floating elements */
-        .floating-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .shape {
-            position: absolute;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .shape:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            width: 80px;
-            height: 80px;
-            background: white;
-            border-radius: 50%;
-            animation-delay: 0s;
-        }
-
-        .shape:nth-child(2) {
-            top: 60%;
-            right: 15%;
-            width: 60px;
-            height: 60px;
-            background: white;
-            border-radius: 20%;
-            animation-delay: 2s;
-        }
-
-        .shape:nth-child(3) {
-            bottom: 30%;
-            left: 20%;
-            width: 100px;
-            height: 100px;
-            background: white;
-            border-radius: 30%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-    </style>
+/* Responsive */
+@media(max-width:1000px){
+  .grid-3,.cal-grid{grid-template-columns:repeat(2,1fr)}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);row-gap:40px}
+  .steps::before{display:none}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .est-wrap,.about-grid,.contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:860px){
+  .nav-links{position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:var(--card);box-shadow:0 12px 24px rgba(0,0,0,.12);max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .nav-links.open{max-height:420px}
+  .nav-links li{width:100%}
+  .nav-links a{display:block;padding:14px 24px;border-top:1px solid var(--border)}
+  .nav-links a::after{display:none}
+  .menu-btn{display:grid}
+  .nav-est{display:none}
+  .topbar .container{justify-content:center}
+  .tb-right{display:none}
+  .hero{padding:60px 0 100px}
+  .hero-grid{grid-template-columns:1fr;text-align:center;gap:30px}
+  .lead{margin-left:auto;margin-right:auto}
+  .hero-btns,.formula{justify-content:center}
+  .hero-visual{order:-1}
+  .seal{width:200px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--border)}
+  .section{padding:70px 0}
+  .mbar{display:block}
+  body{padding-bottom:72px}
+  .wa-float{bottom:84px;right:12px}
+  .wa-btn{display:none}
+  .wa-panel{bottom:0}
+}
+@media(max-width:600px){
+  .grid-3,.cal-grid,.grid-4,.steps,.row,.svc-grid,.checks,.f-grid{grid-template-columns:1fr}
+  .brand-sub{display:none}
+  .brand-name{font-size:1.15rem}
+  .card{padding:24px}
+  .modal-top,.modal-body{padding-left:22px;padding-right:22px}
+}
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="container">
-            <div class="logo">Shreedeep Solutions</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="floating-shapes">
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-        </div>
-        <div class="hero-content">
-            <h1>Shreedeep Solutions</h1>
-            <p>Expert Accounting & Management Services for Your Success</p>
-            <a href="#services" class="cta-button">Explore Our Services</a>
-        </div>
-    </section>
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+  <symbol id="i-checkc" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-nav" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
+</svg>
 
-    <!-- Services Section -->
-    <section class="section" id="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🏢</div>
-                    <h3>Cooperative Housing Society Accounting</h3>
-                    <p>Comprehensive accounting solutions tailored specifically for cooperative housing societies, ensuring accurate financial management and compliance.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Society Management</h3>
-                    <p>Complete management services for housing societies including maintenance tracking, member communication, and administrative support.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔍</div>
-                    <h3>Audit Services</h3>
-                    <p>Professional audit services for housing societies, ensuring transparency and regulatory compliance with detailed reporting.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📋</div>
-                    <h3>TDS Returns</h3>
-                    <p>Expert handling of TDS return filing and compliance, ensuring timely submissions and avoiding penalties with accurate documentation.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3>GST Returns & Audit</h3>
-                    <p>Complete GST compliance solutions including return filing, audit support, and advisory services to keep your business GST-ready.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">👤</div>
-                    <h3>Individual ITR</h3>
-                    <p>Professional income tax return preparation for individuals, maximizing deductions and ensuring compliance with tax regulations.</p>
-                </div>
+<!-- Top bar -->
+<div class="topbar">
+  <div class="container">
+    <div class="status"><span class="dot" id="statusDot"></span><span id="statusText">Open all days except Tuesday · 9 AM – 6 PM</span></div>
+    <div class="tb-right">
+      <a href="tel:+919004264282">+91 90042 64282</a>
+      <a href="tel:+919004262639">+91 90042 62639</a>
+      <a href="mailto:shreedeepsolutions@gmail.com">shreedeepsolutions@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header id="header">
+  <nav class="container">
+    <a href="#home" class="brand">
+      <img src="logo.jpg" alt="Shreedeep Solutions logo">
+      <span><span class="brand-name">Shreedeep Solutions</span><span class="brand-sub">Society Accounting &amp; Compliance</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#values">Why Us</a></li>
+      <li><a href="#calendar">Due Dates</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">
+        <svg class="ic i-moon"><use href="#i-moon"/></svg>
+        <svg class="ic i-sun"><use href="#i-sun"/></svg>
+      </button>
+      <a href="#estimate" class="btn btn-maroon btn-sm nav-est">Get Estimate</a>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu"><svg class="ic"><use href="#i-menu"/></svg></button>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow"><svg class="ic"><use href="#i-pin"/></svg> Airoli · Navi Mumbai</span>
+      <h1>Accounting &amp; Compliance for <em>Co-operative Housing Societies</em></h1>
+      <p class="lead">Trusted by 120+ housing societies. From monthly maintenance bills to statutory audit, TDS and ITR, we keep your society's books accurate, compliant and stress-free, so your committee can focus on its members.</p>
+      <div class="hero-btns">
+        <a href="#estimate" class="btn btn-gold">Get Free Estimate <svg class="ic"><use href="#i-right"/></svg></a>
+        <button class="btn btn-outline" data-wa-open><svg class="ic"><use href="#i-wa"/></svg> WhatsApp Us</button>
+      </div>
+      <div class="formula">
+        <i>Your Success =</i>
+        <span class="chip">Accuracy</span>+<span class="chip">Efforts</span>+<span class="chip">Integrity</span>+<span class="chip">Trust</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="seal"><img src="logo.jpg" alt="Shreedeep Solutions emblem"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stats">
+  <div class="container">
+    <div class="stats-grid reveal">
+      <div class="stat"><b data-count="120" data-suffix="+">120+</b><span>Housing societies served</span></div>
+      <div class="stat"><b data-count="6">6</b><span>Specialised services</span></div>
+      <div class="stat"><b data-count="6">6</b><span>Days open every week</span></div>
+      <div class="stat"><b data-count="2">2</b><span>Direct WhatsApp lines</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Services -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">What We Do</span>
+      <h2>Our Services</h2>
+      <p>Tap any service to see exactly what's included.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="grid-3 reveal">
+      <div class="card service" data-service="acc" role="button" tabindex="0">
+        <span class="badge-top">Our Speciality</span>
+        <div class="s-icon"><svg class="ic"><use href="#i-home"/></svg></div>
+        <h3>Society Accounting</h3>
+        <p>Complete, reconciled books of account for co-operative housing societies, from billing to balance sheet.</p>
+        <span class="more">View details <svg class="ic"><use href="#i-right"/></svg></span>
+      </div>
+      <div class="card service" data-service="mgmt" role="button" tabindex="0">
+        <div class="s-icon"><svg class="ic"><use href="#i-users"/></svg></div>
+        <h3>Society Management</h3>
+        <p>Registers, meetings, member records and day-to-day administrative support for your committee.</p>
+        <span class="more">View details <svg class="ic"><use href="#i-right"/></svg></span>
+      </div>
+      <div class="card service" data-service="audit" role="button" tabindex="0">
+        <div class="s-icon"><svg class="ic"><use href="#i-search"/></svg></div>
+        <h3>Audit Services</h3>
+        <p>Statutory and internal audit for housing societies with clear, actionable reporting.</p>
+        <span class="more">View details <svg class="ic"><use href="#i-right"/></svg></span>
+      </div>
+      <div class="card service" data-service="tds" role="button" tabindex="0">
+        <div class="s-icon"><svg class="ic"><use href="#i-file"/></svg></div>
+        <h3>TDS Returns</h3>
+        <p>Deduction, payment and quarterly return filing under the new Income-tax Act, on time, every time.</p>
+        <span class="more">View details <svg class="ic"><use href="#i-right"/></svg></span>
+      </div>
+      <div class="card service" data-service="gst" role="button" tabindex="0">
+        <div class="s-icon"><svg class="ic"><use href="#i-briefcase"/></svg></div>
+        <h3>GST Returns &amp; Audit</h3>
+        <p>Applicability checks, registration, monthly and annual returns, and notice support.</p>
+        <span class="more">View details <svg class="ic"><use href="#i-right"/></svg></span>
+      </div>
+      <div class="card service" data-service="itr" role="button" tabindex="0">
+        <div class="s-icon"><svg class="ic"><use href="#i-user"/></svg></div>
+        <h3>Individual ITR</h3>
+        <p>Accurate income tax returns for salaried individuals, professionals and pensioners.</p>
+        <span class="more">View details <svg class="ic"><use href="#i-right"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section alt" id="values">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Our Formula</span>
+      <h2>Why Societies Choose Us</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="eq reveal"><b>Your Success</b> = Our Accuracy + Efforts + Integrity + Trust</p>
+    <div class="grid-4 reveal">
+      <div class="card value">
+        <div class="v-icon"><svg class="ic"><use href="#i-target"/></svg></div>
+        <h3>Accuracy</h3>
+        <p>Bank, cash-in-hand and member ledgers are reconciled before any report goes out.</p>
+      </div>
+      <div class="card value">
+        <div class="v-icon"><svg class="ic"><use href="#i-trend"/></svg></div>
+        <h3>Efforts</h3>
+        <p>We follow up on records, dues and paperwork so your committee doesn't have to.</p>
+      </div>
+      <div class="card value">
+        <div class="v-icon"><svg class="ic"><use href="#i-checkc"/></svg></div>
+        <h3>Integrity</h3>
+        <p>Transparent books, honest advice and no shortcuts on statutory compliance.</p>
+      </div>
+      <div class="card value">
+        <div class="v-icon"><svg class="ic"><use href="#i-shield"/></svg></div>
+        <h3>Trust</h3>
+        <p>Confidential handling of your society's records and one point of contact you can rely on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Getting Started</span>
+      <h2>How We Work</h2>
+      <p>Switching accountants is simpler than you think.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><div class="step-num">1</div><h3>Share Your Details</h3><p>Fill the estimate form, call or WhatsApp us with your society's basic details.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Free Consultation</h3><p>We understand your society's size, current status and exact requirements.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Smooth Handover</h3><p>We collect records from your previous accountant and verify opening balances.</p></div>
+      <div class="step"><div class="step-num">4</div><h3>Ongoing Accuracy</h3><p>Regular bills, reconciled books, timely filings and audit-ready accounts.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Compliance Calendar -->
+<section class="section alt" id="calendar">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Compliance Calendar</span>
+      <h2>Upcoming Due Dates</h2>
+      <p>TDS and Income Tax Return deadlines for individuals and co-operative housing societies. Add any date to your Google Calendar in one tap.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="cal-filters">
+      <button class="chip-btn active" data-cat="All">All</button>
+      <button class="chip-btn" data-cat="TDS">TDS</button>
+      <button class="chip-btn" data-cat="IND">ITR – Individuals</button>
+      <button class="chip-btn" data-cat="SOC">ITR – Societies</button>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+    <p class="cal-note">Due dates as per the Income-tax Act, 2025 and Income-tax Rules, 2026 (TDS returns in Form 138 for salary and Form 140 for non-salary payments). The government sometimes extends deadlines, so please call us to confirm the latest position.</p>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-text reveal">
+      <span class="kicker">About Us</span>
+      <h2>Focused on Housing Societies</h2>
+      <p>Shreedeep Solutions provides accounting, management and compliance services to more than 120 co-operative housing societies. Our team brings hands-on experience in society accounting, statutory audit, TDS, GST and income tax.</p>
+      <p>We understand the challenges managing committees face, from pending records and member dues to audit objections, and we deliver practical solutions that keep your society accurate, compliant and worry-free.</p>
+      <ul class="checks">
+        <li><svg class="ic"><use href="#i-check"/></svg>Specialists in co-operative housing societies</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Statutory audit reports in Marathi</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Bank &amp; cash reconciliation every period</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Timely TDS, GST &amp; ITR filings</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Smooth takeover from previous accountant</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Single point of contact for your committee</li>
+      </ul>
+    </div>
+    <div class="card hours-card reveal">
+      <h3><svg class="ic"><use href="#i-clock"/></svg> Office Hours <span class="pill" id="hoursStatus"></span></h3>
+      <div class="hours-row" data-day="1"><span>Monday</span><span>9:00 AM – 6:00 PM</span></div>
+      <div class="hours-row closed" data-day="2"><span>Tuesday</span><span>Closed</span></div>
+      <div class="hours-row" data-day="3"><span>Wednesday</span><span>9:00 AM – 6:00 PM</span></div>
+      <div class="hours-row" data-day="4"><span>Thursday</span><span>9:00 AM – 6:00 PM</span></div>
+      <div class="hours-row" data-day="5"><span>Friday</span><span>9:00 AM – 6:00 PM</span></div>
+      <div class="hours-row" data-day="6"><span>Saturday</span><span>9:00 AM – 6:00 PM</span></div>
+      <div class="hours-row" data-day="0"><span>Sunday</span><span>9:00 AM – 6:00 PM</span></div>
+      <div class="hours-tip">📞 <b>Planning to visit?</b> Please call us before coming so we can give you our full time and attention.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Estimate -->
+<section class="section alt" id="estimate">
+  <div class="container est-wrap">
+    <div class="est-info reveal">
+      <span class="kicker">Free Estimate</span>
+      <h2>Get a Quote for Your Society</h2>
+      <p>Tell us about your society and the work you need. We'll review the details and send you a customised estimate for monthly accounting and management.</p>
+      <ul class="est-points">
+        <li><svg class="ic"><use href="#i-check"/></svg>No obligation, completely free</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Pricing based on your society's size and scope</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Prefer talking? Call or WhatsApp us directly</li>
+      </ul>
+      <div class="est-cta">
+        <a href="tel:+919004264282" class="btn btn-ghost btn-sm"><svg class="ic"><use href="#i-phone"/></svg> Call Now</a>
+        <button class="btn btn-wa btn-sm" data-wa-open><svg class="ic"><use href="#i-wa"/></svg> WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <div class="progress">
+        <div class="p active" data-step="1"><i></i>Your Details</div>
+        <div class="p" data-step="2"><i></i>Society</div>
+        <div class="p" data-step="3"><i></i>Work Required</div>
+      </div>
+      <form id="estForm" novalidate>
+        <div class="fstep active" data-step="1">
+          <div class="fg"><label for="f-name">Contact person name *</label><input id="f-name" type="text" autocomplete="name" placeholder="e.g. Ramesh Patil"><div class="err-msg">Please enter your name</div></div>
+          <div class="row">
+            <div class="fg"><label for="f-phone">Mobile number *</label><input id="f-phone" type="tel" autocomplete="tel" placeholder="10-digit mobile"><div class="err-msg">Enter a valid 10-digit mobile number</div></div>
+            <div class="fg"><label for="f-email">Email address *</label><input id="f-email" type="email" autocomplete="email" placeholder="you@example.com"><div class="err-msg">Enter a valid email address</div></div>
+          </div>
+          <div class="fg"><label for="f-role">Your designation in the society</label>
+            <select id="f-role"><option value="">Select (optional)</option><option>Chairman</option><option>Secretary</option><option>Treasurer</option><option>Committee Member</option><option>Member</option><option>Other</option></select>
+          </div>
+          <div class="f-nav"><button type="button" class="btn btn-maroon" data-next>Next <svg class="ic"><use href="#i-right"/></svg></button></div>
+        </div>
+
+        <div class="fstep" data-step="2">
+          <div class="fg"><label for="f-society">Society name *</label><input id="f-society" type="text" placeholder="e.g. Shree Ganesh CHS Ltd."><div class="err-msg">Please enter the society name</div></div>
+          <div class="fg"><label for="f-address">Society address *</label><textarea id="f-address" placeholder="Building, sector, area and pincode"></textarea><div class="err-msg">Please enter the complete address</div></div>
+          <div class="row">
+            <div class="fg"><label for="f-flats">Number of flats *</label><input id="f-flats" type="number" min="0" inputmode="numeric" placeholder="e.g. 48"><div class="err-msg">Enter the number of flats</div></div>
+            <div class="fg"><label for="f-shops">Number of shops</label><input id="f-shops" type="number" min="0" inputmode="numeric" placeholder="0"></div>
+          </div>
+          <div class="total-units" id="totalUnits">Total units: 0</div>
+          <div class="f-nav">
+            <button type="button" class="btn btn-ghost" data-back><svg class="ic"><use href="#i-left"/></svg> Back</button>
+            <button type="button" class="btn btn-maroon" data-next>Next <svg class="ic"><use href="#i-right"/></svg></button>
+          </div>
+        </div>
+
+        <div class="fstep" data-step="3">
+          <span class="svc-label">Services required *</span>
+          <div class="svc-grid">
+            <label class="svc-opt"><input type="checkbox" name="svc" value="Society Accounting">Society Accounting</label>
+            <label class="svc-opt"><input type="checkbox" name="svc" value="Society Management">Society Management</label>
+            <label class="svc-opt"><input type="checkbox" name="svc" value="Audit">Audit</label>
+            <label class="svc-opt"><input type="checkbox" name="svc" value="TDS Returns">TDS Returns</label>
+            <label class="svc-opt"><input type="checkbox" name="svc" value="GST Returns &amp; Audit">GST Returns &amp; Audit</label>
+            <label class="svc-opt"><input type="checkbox" name="svc" value="Individual ITR">Individual ITR</label>
+          </div>
+          <div id="svcErr">Please select at least one service</div>
+          <div class="fg"><label for="f-details">Describe the work required</label><textarea id="f-details" placeholder="e.g. Monthly billing &amp; accounts, pending accounts from last year, audit support…"></textarea></div>
+          <div class="f-nav">
+            <button type="button" class="btn btn-ghost" data-back><svg class="ic"><use href="#i-left"/></svg> Back</button>
+            <button type="submit" class="btn btn-maroon" id="submitBtn"><svg class="ic"><use href="#i-send"/></svg> Submit Request</button>
+          </div>
+          <div class="f-nav"><button type="button" class="btn btn-wa" id="waSend"><svg class="ic"><use href="#i-wa"/></svg> Send on WhatsApp instead</button></div>
+        </div>
+      </form>
+      <div class="form-msg" id="formMsg" role="status"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Contact</span>
+      <h2>Get In Touch</h2>
+      <p>Both our numbers are on WhatsApp Business.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="c-cards reveal">
+        <div class="card c-card">
+          <div class="c-icon"><svg class="ic"><use href="#i-phone"/></svg></div>
+          <div>
+            <h3>Call or WhatsApp</h3>
+            <div class="c-links">
+              <div class="c-line"><a class="num" href="tel:+919004264282">+91 90042 64282</a><a class="mini call" href="tel:+919004264282"><svg class="ic"><use href="#i-phone"/></svg>Call</a><a class="mini wa" target="_blank" rel="noopener" href="https://wa.me/919004264282?text=Hello%20Shreedeep%20Solutions%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."><svg class="ic"><use href="#i-wa"/></svg>WhatsApp</a></div>
+              <div class="c-line"><a class="num" href="tel:+919004262639">+91 90042 62639</a><a class="mini call" href="tel:+919004262639"><svg class="ic"><use href="#i-phone"/></svg>Call</a><a class="mini wa" target="_blank" rel="noopener" href="https://wa.me/919004262639?text=Hello%20Shreedeep%20Solutions%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."><svg class="ic"><use href="#i-wa"/></svg>WhatsApp</a></div>
             </div>
+          </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="container">
-            <h2 class="section-title">About Shreedeep Solutions</h2>
-            <div class="about-content">
-                <p>At Shreedeep Solutions, we specialize in providing comprehensive accounting and management services with a particular expertise in cooperative housing societies. Our team of qualified professionals brings years of experience in financial management, audit, and compliance services.</p>
-                <br>
-                <p>We understand the unique challenges faced by housing societies and individual clients, and we're committed to delivering personalized solutions that ensure accuracy, compliance, and peace of mind. From day-to-day accounting to complex audit requirements, we handle it all with professionalism and expertise.</p>
-                <br>
-                <p>Our mission is to simplify financial management for our clients while ensuring complete transparency and regulatory compliance across all services.</p>
+        <div class="card c-card">
+          <div class="c-icon"><svg class="ic"><use href="#i-mail"/></svg></div>
+          <div>
+            <h3>Email Us</h3>
+            <p><a class="num" href="mailto:shreedeepsolutions@gmail.com">shreedeepsolutions@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="card c-card">
+          <div class="c-icon"><svg class="ic"><use href="#i-pin"/></svg></div>
+          <div>
+            <h3>Visit Our Office</h3>
+            <p>D204, Shankar Sheela CHS Ltd., Sector-8, Airoli, Navi Mumbai – 400708</p>
+            <div class="c-line" style="margin-top:8px">
+              <a class="mini call" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=4XWV%2BJP%20Navi%20Mumbai%2C%20Maharashtra"><svg class="ic"><use href="#i-pin"/></svg>Open in Maps</a>
+              <a class="mini call" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=4XWV%2BJP%20Navi%20Mumbai%2C%20Maharashtra"><svg class="ic"><use href="#i-nav"/></svg>Directions</a>
             </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-info">
-                <div class="contact-item clickable" onclick="makePhoneCall()">
-                    <div class="contact-icon">📞</div>
-                    <h3>Call Us</h3>
-                    <p>Ready to discuss your requirements? Give us a call on <a href="tel:+919004264282" class="phone-number">+91 9004264282</a>.</p>
-                    <div class="map-hint">Click to call directly</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">✉️</div>
-                    <h3>Email Us</h3>
-                    <p>Send us your queries on shreedeepsolutions@gmail.com and we'll get back to you with detailed solutions.</p>
-                </div>
-                <div class="contact-item clickable" onclick="openGoogleMaps()">
-                    <div class="contact-icon">🏢</div>
-                    <h3>Visit Our Office</h3>
-                    <p>Schedule an appointment to meet our team and discuss your needs in person.</p>
-                    <a href="#" class="address-text" onclick="openGoogleMaps(); return false;">
-                        D204, Shankar Sheela CHS Ltd.,<br>
-                        Sector-8, Airoli,<br>
-                        Navi Mumbai - 400708
-                    </a>
-                    <div class="map-hint">Click to open in Google Maps</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">💬</div>
-                    <h3>Consultation</h3>
-                    <p>Free initial consultation to understand your requirements and suggest the best solutions.</p>
-                </div>
-            </div>
+        <div class="card c-card">
+          <div class="c-icon"><svg class="ic"><use href="#i-clock"/></svg></div>
+          <div>
+            <h3>Office Hours</h3>
+            <p>Open all days except Tuesday · 9:00 AM – 6:00 PM<br>Please call before visiting.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Shreedeep Solutions. All rights reserved. | Professional Accounting & Management Services</p>
+      </div>
+      <div class="map reveal">
+        <iframe title="Shreedeep Solutions office location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=4XWV%2BJP%20Navi%20Mumbai%2C%20Maharashtra&amp;z=17&amp;output=embed"></iframe>
+        <div class="map-btns">
+          <a class="btn btn-maroon btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=4XWV%2BJP%20Navi%20Mumbai%2C%20Maharashtra"><svg class="ic"><use href="#i-nav"/></svg> Get Directions</a>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // Function to make phone call
-        function makePhoneCall() {
-            window.location.href = 'tel:+919004264282';
-        }
+<!-- Footer -->
+<footer>
+  <div class="container f-grid">
+    <div>
+      <div class="f-brand"><img src="logo.jpg" alt="Shreedeep Solutions logo"><b>Shreedeep Solutions</b></div>
+      <p class="f-tag">Your Success = Our Accuracy + Efforts + Integrity + Trust</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Society Accounting</a></li>
+        <li><a href="#services">Society Management</a></li>
+        <li><a href="#services">Audit Services</a></li>
+        <li><a href="#services">TDS, GST &amp; ITR</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#estimate">Get Estimate</a></li>
+        <li><a href="#calendar">Due Dates</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+919004264282">+91 90042 64282</a></li>
+        <li><a href="tel:+919004262639">+91 90042 62639</a></li>
+        <li><a href="mailto:shreedeepsolutions@gmail.com">shreedeepsolutions@gmail.com</a></li>
+        <li>Sector-8, Airoli, Navi Mumbai</li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bottom">© <span id="year">2026</span> Shreedeep Solutions. All rights reserved.</div>
+</footer>
 
-        // Function to open Google Maps
-        function openGoogleMaps() {
-            const address = "D204, Shankar Sheela CHS Ltd., Sector-8, Airoli, Navi Mumbai - 400708";
-            const plusCode = "4XWV+JP Navi Mumbai, Maharashtra";
-            
-            // Try to open with plus code first (more accurate), fallback to address
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(plusCode)}`;
-            
-            // Open in new tab
-            window.open(mapsUrl, '_blank');
-        }
+<!-- WhatsApp chooser -->
+<div class="wa-float">
+  <div class="wa-panel" id="waPanel">
+    <div class="wa-head"><b>Chat with Shreedeep Solutions</b><small>Choose a number to start chatting</small></div>
+    <div id="waOptions"></div>
+  </div>
+  <button class="wa-btn" id="waBtn" aria-label="Chat on WhatsApp"><svg class="ic"><use href="#i-wa"/></svg></button>
+</div>
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+<!-- Mobile action bar -->
+<div class="mbar">
+  <div class="mbar-in">
+    <a class="mb-call" href="tel:+919004264282"><svg class="ic"><use href="#i-phone"/></svg>Call</a>
+    <button class="mb-wa" data-wa-open><svg class="ic"><use href="#i-wa"/></svg>WhatsApp</button>
+    <a class="mb-est" href="#estimate">Get Estimate</a>
+  </div>
+</div>
 
-        // Header background change on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
+<!-- Service modal -->
+<div class="modal" id="svcModal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="modal-box">
+    <div class="modal-top">
+      <button class="modal-close" data-close aria-label="Close">&times;</button>
+      <div class="s-icon" id="mIcon"></div>
+      <h3 id="mTitle"></h3>
+      <p id="mDesc"></p>
+    </div>
+    <div class="modal-body">
+      <h4>What's included</h4>
+      <ul class="incl" id="mList"></ul>
+      <div class="modal-actions">
+        <button class="btn btn-maroon" id="mEnquire">Get Estimate for this</button>
+        <button class="btn btn-ghost" data-wa-open><svg class="ic"><use href="#i-wa"/></svg> Ask on WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-        // Add animation on scroll for service cards
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+<script>
+/* ====== SETTINGS ====== */
+const WEB3FORMS_KEY = '499e48d0-4507-41d3-97ff-ec1b83372fe3';
+const EMAIL = 'shreedeepsolutions@gmail.com';
+const PHONES = [
+  { num: '919004264282', label: '+91 90042 64282', name: 'Office Line 1' },
+  { num: '919004262639', label: '+91 90042 62639', name: 'Office Line 2' }
+];
+const WA_GREETING = 'Hello Shreedeep Solutions, I would like to know more about your services.';
+/* ====================== */
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+const $ = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
+const ic = n => '<svg class="ic"><use href="#i-' + n + '"/></svg>';
+const waLink = (num, text) => 'https://wa.me/' + num + '?text=' + encodeURIComponent(text);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
-        // Initially hide service cards
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.6s ease';
-            observer.observe(card);
-        });
-    </script>
+$('#year').textContent = new Date().getFullYear();
+
+/* Theme */
+$('#themeBtn').addEventListener('click', () => {
+  const d = document.documentElement;
+  const dark = d.getAttribute('data-theme') === 'dark';
+  if (dark) d.removeAttribute('data-theme'); else d.setAttribute('data-theme', 'dark');
+  try { localStorage.setItem('ss-theme', dark ? 'light' : 'dark'); } catch (e) {}
+});
+
+/* Mobile menu */
+const navLinks = $('#navLinks');
+$('#menuBtn').addEventListener('click', e => { e.stopPropagation(); navLinks.classList.toggle('open'); });
+$$('#navLinks a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+/* Header shadow */
+window.addEventListener('scroll', () => $('#header').classList.toggle('scrolled', window.scrollY > 10), { passive: true });
+
+/* Reveal on scroll */
+const io = new IntersectionObserver(entries => entries.forEach(en => {
+  if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+}), { threshold: 0.12 });
+$$('.reveal').forEach(el => io.observe(el));
+
+/* Counters */
+const cio = new IntersectionObserver(entries => entries.forEach(en => {
+  if (!en.isIntersecting) return;
+  const el = en.target, end = +el.dataset.count, suf = el.dataset.suffix || '';
+  let t0 = null;
+  const tick = ts => {
+    if (!t0) t0 = ts;
+    const p = Math.min((ts - t0) / 1400, 1);
+    el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suf;
+    if (p < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+  cio.unobserve(el);
+}), { threshold: 0.5 });
+$$('[data-count]').forEach(el => cio.observe(el));
+
+/* Live office status (IST) */
+function istNow() { return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })); }
+function updateStatus() {
+  const n = istNow(), day = n.getDay(), h = n.getHours() + n.getMinutes() / 60;
+  let open = false, msg;
+  if (day === 2) msg = 'Closed today (Tuesday) · Opens Wednesday 9:00 AM';
+  else if (h < 9) msg = 'Closed now · Opens today at 9:00 AM';
+  else if (h < 18) { open = true; msg = 'Open now · Until 6:00 PM today'; }
+  else msg = day === 1 ? 'Closed now · Opens Wednesday 9:00 AM' : 'Closed now · Opens tomorrow at 9:00 AM';
+  $('#statusDot').classList.toggle('open', open);
+  $('#statusText').textContent = msg;
+  $$('.hours-row').forEach(r => r.classList.toggle('today', +r.dataset.day === day));
+  const hs = $('#hoursStatus');
+  hs.textContent = open ? 'Open now' : 'Closed now';
+  hs.className = 'pill ' + (open ? 'pill-open' : 'pill-closed');
+}
+updateStatus();
+setInterval(updateStatus, 60000);
+
+/* WhatsApp chooser */
+const waPanel = $('#waPanel');
+$('#waOptions').innerHTML = PHONES.map(p =>
+  '<a class="wa-opt" target="_blank" rel="noopener" href="' + waLink(p.num, WA_GREETING) + '"><span class="av">' + ic('wa') +
+  '</span><span><b>' + p.name + '</b><small>' + p.label + '</small></span></a>').join('');
+function toggleWA(force) { waPanel.classList.toggle('open', force); }
+$('#waBtn').addEventListener('click', e => { e.stopPropagation(); toggleWA(); });
+$$('[data-wa-open]').forEach(b => b.addEventListener('click', e => {
+  e.preventDefault(); e.stopPropagation(); closeModal(); toggleWA(true);
+}));
+document.addEventListener('click', e => {
+  if (!waPanel.contains(e.target)) toggleWA(false);
+  if (!navLinks.contains(e.target)) navLinks.classList.remove('open');
+});
+
+/* Service details */
+const SERVICES = {
+  acc: { icon: 'home', title: 'Society Accounting', value: 'Society Accounting',
+    desc: 'Complete, up-to-date books of account for your co-operative housing society, prepared every period, reconciled and ready for audit.',
+    items: ['Maintenance bill generation (monthly, bi-monthly or quarterly)', 'Receipt entries and member-wise ledgers with arrears &amp; interest', 'Bank reconciliation and cash-in-hand verification', 'Receipts &amp; Payments statement for every period', 'Annual Income &amp; Expenditure account and Balance Sheet', 'Audit-ready records and schedules'] },
+  mgmt: { icon: 'users', title: 'Society Management', value: 'Society Management',
+    desc: 'Administrative support that keeps your committee organised and your members informed.',
+    items: ['Member records, share certificates and statutory registers', 'AGM / SGM notices, agenda and minutes drafting', 'Defaulter follow-up and dues reminders', 'Correspondence with members and authorities', 'Documentation for transfers, nominations and NOCs', 'Smooth handover from your previous accountant'] },
+  audit: { icon: 'search', title: 'Audit Services', value: 'Audit',
+    desc: 'Statutory and internal audit for housing societies, with clear reporting your committee can act on.',
+    items: ['Statutory audit under the Maharashtra Co-operative Societies Act', 'Audit reports in the prescribed format, including Marathi', 'Internal audit for larger societies', 'Assistance with the audit rectification report (Form O)', 'Review of past irregularities with corrective suggestions'] },
+  tds: { icon: 'file', title: 'TDS Returns', value: 'TDS Returns',
+    desc: 'End-to-end TDS compliance under the Income-tax Act, 2025, so your society never pays late fees or interest.',
+    items: ['TDS computation on contractor, professional and salary payments', 'Monthly TDS challan payments by the 7th', 'Quarterly returns – Form 138 (salary) and Form 140 (non-salary)', 'TDS certificates to deductees', 'Correction returns and TRACES notice handling'] },
+  gst: { icon: 'briefcase', title: 'GST Returns & Audit', value: 'GST Returns & Audit',
+    desc: 'GST applicability review, registration and timely return filing for societies and businesses.',
+    items: ['GST applicability check for your society', 'GST registration', 'GSTR-1 and GSTR-3B filing', 'GSTR-9 annual return and reconciliation', 'Notice replies and advisory'] },
+  itr: { icon: 'user', title: 'Individual ITR', value: 'Individual ITR',
+    desc: 'Accurate income tax returns for salaried individuals, professionals, pensioners and society members.',
+    items: ['ITR preparation and e-filing', 'Annual Information Statement (AIS) reconciliation', 'Deduction review to reduce tax legally', 'Refund tracking and follow-up', 'Response to income tax notices'] }
+};
+const modal = $('#svcModal');
+let currentSvc = null;
+function openModal(key) {
+  const s = SERVICES[key]; if (!s) return;
+  currentSvc = key;
+  $('#mIcon').innerHTML = ic(s.icon);
+  $('#mTitle').textContent = s.title;
+  $('#mDesc').textContent = s.desc;
+  $('#mList').innerHTML = s.items.map(i => '<li>' + ic('check') + '<span>' + i + '</span></li>').join('');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() { modal.classList.remove('open'); document.body.style.overflow = ''; }
+$$('.service').forEach(c => {
+  c.addEventListener('click', () => openModal(c.dataset.service));
+  c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(c.dataset.service); } });
+});
+modal.addEventListener('click', e => { if (e.target === modal || e.target.closest('[data-close]')) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); toggleWA(false); } });
+$('#mEnquire').addEventListener('click', () => {
+  const v = SERVICES[currentSvc].value;
+  $$('input[name="svc"]').forEach(cb => { if (cb.value === v) cb.checked = true; });
+  closeModal();
+  $('#estimate').scrollIntoView({ behavior: 'smooth' });
+});
+
+/* Compliance calendar – TDS, ITR (Individuals) and ITR (Co-op Housing Societies) only */
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const MSHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function buildDeadlines() {
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const list = [];
+  const add = (y, m, d, cats, tag, title) => {
+    const dt = new Date(y, m, d);
+    if (dt >= today) list.push({ dt, cats, tag, title });
+  };
+  const y0 = today.getFullYear();
+  for (let y = y0; y <= y0 + 1; y++) {
+    // TDS payment – 7th of next month (March deductions: 30 April)
+    for (let m = 0; m < 12; m++) {
+      if (m !== 3) add(y, m, 7, ['TDS'], 'TDS', 'TDS payment for ' + MONTHS[(m + 11) % 12] + ' deductions');
+    }
+    add(y, 3, 30, ['TDS'], 'TDS', 'TDS payment for March deductions');
+    // Quarterly TDS returns – Form 138 (salary) / Form 140 (non-salary)
+    add(y, 6, 31, ['TDS'], 'TDS', 'TDS return Q1 (Apr–Jun) – Form 138 / Form 140');
+    add(y, 9, 31, ['TDS'], 'TDS', 'TDS return Q2 (Jul–Sep) – Form 138 / Form 140');
+    add(y, 0, 31, ['TDS'], 'TDS', 'TDS return Q3 (Oct–Dec) – Form 138 / Form 140');
+    add(y, 4, 31, ['TDS'], 'TDS', 'TDS return Q4 (Jan–Mar) – Form 138 / Form 140');
+    // ITR – Individuals
+    add(y, 6, 31, ['IND'], 'ITR – Individuals', 'ITR – salaried individuals & pensioners (ITR-1 / ITR-2)');
+    add(y, 7, 31, ['IND'], 'ITR – Individuals', 'ITR – business / professional income, no tax audit (ITR-3 / ITR-4)');
+    add(y, 9, 31, ['IND'], 'ITR – Individuals', 'ITR – individuals liable to tax audit');
+    // ITR – Co-operative Housing Societies
+    add(y, 9, 31, ['SOC'], 'ITR – Societies', 'ITR-5 – Co-operative housing societies (accounts audited under MCS Act)');
+    // Common
+    add(y, 11, 31, ['IND', 'SOC'], 'ITR – All', 'Belated ITR – last date');
+    add(y, 2, 31, ['IND', 'SOC'], 'ITR – All', 'Revised ITR – last date');
+  }
+  return list.sort((a, b) => a.dt - b.dt);
+}
+const DEADLINES = buildDeadlines();
+let calFilter = 'All';
+const ymd = d => d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
+function renderCal() {
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const items = DEADLINES.filter(x => calFilter === 'All' || x.cats.indexOf(calFilter) > -1).slice(0, 9);
+  $('#calGrid').innerHTML = items.map(x => {
+    const days = Math.round((x.dt - today) / 86400000);
+    const left = days === 0 ? 'Due today' : days === 1 ? 'Due tomorrow' : 'In ' + days + ' days';
+    const cls = days <= 7 ? 'urgent' : days <= 15 ? 'soon' : '';
+    const nx = new Date(x.dt); nx.setDate(nx.getDate() + 1);
+    const g = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(x.title) +
+      '&dates=' + ymd(x.dt) + '/' + ymd(nx) +
+      '&details=' + encodeURIComponent('Compliance reminder from Shreedeep Solutions. Need help? Call +91 9004264282 – www.shreedeepsolutions.com');
+    return '<div class="card due' + (cls === 'urgent' ? ' urgent-card' : '') + '">' +
+      '<div class="due-date"><div class="m">' + MSHORT[x.dt.getMonth()] + '</div><div class="d">' + x.dt.getDate() + '</div><div class="y">' + x.dt.getFullYear() + '</div></div>' +
+      '<div class="due-body"><h4>' + x.title + '</h4><div class="due-meta"><span class="tag">' + x.tag + '</span><span class="left ' + cls + '">' + left + '</span></div>' +
+      '<a class="gcal" target="_blank" rel="noopener" href="' + g + '">' + ic('calendar') + ' Add to Google Calendar</a></div></div>';
+  }).join('');
+}
+$$('.chip-btn').forEach(b => b.addEventListener('click', () => {
+  $$('.chip-btn').forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  calFilter = b.dataset.cat;
+  renderCal();
+}));
+renderCal();
+
+/* Estimate form */
+const form = $('#estForm');
+let step = 1;
+function showStep(n) {
+  step = n;
+  $$('.fstep').forEach(s => s.classList.toggle('active', +s.dataset.step === n));
+  $$('.progress .p').forEach(p => {
+    const i = +p.dataset.step;
+    p.classList.toggle('active', i === n);
+    p.classList.toggle('done', i < n);
+  });
+}
+function setErr(id, bad) { $('#' + id).closest('.fg').classList.toggle('err', bad); return !bad; }
+function cleanPhone(v) {
+  let ph = v.replace(/[\s-]/g, '');
+  if (ph.length > 10) ph = ph.replace(/^(\+?91|0)/, '');
+  return ph;
+}
+function validate(n) {
+  let ok = true;
+  if (n === 1) {
+    ok = setErr('f-name', $('#f-name').value.trim().length < 2) && ok;
+    ok = setErr('f-phone', !/^[6-9]\d{9}$/.test(cleanPhone($('#f-phone').value))) && ok;
+    ok = setErr('f-email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('#f-email').value.trim())) && ok;
+  }
+  if (n === 2) {
+    ok = setErr('f-society', !$('#f-society').value.trim()) && ok;
+    ok = setErr('f-address', $('#f-address').value.trim().length < 5) && ok;
+    ok = setErr('f-flats', !(+$('#f-flats').value > 0)) && ok;
+  }
+  if (n === 3) {
+    const any = $$('input[name="svc"]:checked').length > 0;
+    $('#svcErr').style.display = any ? 'none' : 'block';
+    ok = any;
+  }
+  return ok;
+}
+function updTotal() {
+  const f = +$('#f-flats').value || 0, s = +$('#f-shops').value || 0;
+  $('#totalUnits').textContent = 'Total units: ' + (f + s) + '  (' + f + ' flats + ' + s + ' shops)';
+}
+['f-flats', 'f-shops'].forEach(id => $('#' + id).addEventListener('input', updTotal));
+$$('#estForm input, #estForm textarea').forEach(i => i.addEventListener('input', () => {
+  const fg = i.closest('.fg'); if (fg) fg.classList.remove('err');
+}));
+$$('input[name="svc"]').forEach(cb => cb.addEventListener('change', () => { $('#svcErr').style.display = 'none'; }));
+$$('[data-next]').forEach(b => b.addEventListener('click', () => { if (validate(step)) showStep(step + 1); }));
+$$('[data-back]').forEach(b => b.addEventListener('click', () => showStep(step - 1)));
+
+function collect() {
+  const f = +$('#f-flats').value || 0, s = +$('#f-shops').value || 0;
+  return {
+    name: $('#f-name').value.trim(), phone: $('#f-phone').value.trim(), email: $('#f-email').value.trim(),
+    role: $('#f-role').value || '-', society: $('#f-society').value.trim(), address: $('#f-address').value.trim(),
+    flats: f, shops: s, total: f + s,
+    services: $$('input[name="svc"]:checked').map(c => c.value).join(', '),
+    details: $('#f-details').value.trim() || '-'
+  };
+}
+function asText(d) {
+  return 'NEW ESTIMATE REQUEST\n\nName: ' + d.name + '\nDesignation: ' + d.role + '\nPhone: ' + d.phone + '\nEmail: ' + d.email +
+    '\n\nSociety: ' + d.society + '\nAddress: ' + d.address + '\nFlats: ' + d.flats + '\nShops: ' + d.shops + '\nTotal units: ' + d.total +
+    '\n\nServices required: ' + d.services + '\nWork details: ' + d.details;
+}
+const msg = $('#formMsg');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!validate(3)) return;
+  const d = collect();
+  msg.className = 'form-msg';
+  const btn = $('#submitBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Sending…';
+  try {
+    const r = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: 'New Estimate Request – ' + d.society,
+        from_name: 'Shreedeep Solutions Website',
+        replyto: d.email,
+        'Contact Person': d.name, 'Designation': d.role, 'Phone': d.phone, 'Email': d.email,
+        'Society Name': d.society, 'Society Address': d.address,
+        'Flats': d.flats, 'Shops': d.shops, 'Total Units': d.total,
+        'Services Required': d.services, 'Work Details': d.details
+      })
+    });
+    const j = await r.json();
+    if (!j.success) throw new Error(j.message || 'Failed');
+    msg.className = 'form-msg ok';
+    msg.innerHTML = '<b>Thank you, ' + esc(d.name) + '!</b> Your request for <b>' + esc(d.society) + '</b> has reached us. We will get back to you with an estimate soon.';
+    form.reset(); updTotal(); showStep(1);
+  } catch (err) {
+    msg.className = 'form-msg bad';
+    msg.innerHTML = 'Sorry, we could not send your request right now. Please use <b>Send on WhatsApp instead</b> or call +91 90042 64282.';
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = ic('send') + ' Submit Request';
+  }
+});
+$('#waSend').addEventListener('click', () => {
+  if (!validate(3)) return;
+  window.open(waLink(PHONES[0].num, asText(collect())), '_blank');
+});
+</script>
 </body>
 </html>
