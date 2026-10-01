@@ -98,8 +98,8 @@ nav{display:flex;align-items:center;justify-content:space-between;height:72px;ga
 .formula .chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:4px 12px;border-radius:50px;color:#fff}
 .formula i{font-style:italic;font-family:'Playfair Display',serif}
 .hero-visual{display:grid;place-items:center}
-.seal{position:relative;width:min(340px,80vw);aspect-ratio:1}
-.seal img{position:absolute;top:8%;left:8%;width:84%;height:84%;border-radius:50%;background:#fff;object-fit:cover;box-shadow:0 25px 60px rgba(0,0,0,.35);animation:floaty 6s ease-in-out infinite}
+.seal{position:relative;width:min(340px,80vw);aspect-ratio:1;animation:floaty 6s ease-in-out infinite}
+.seal img{position:absolute;top:8%;left:8%;width:84%;height:84%;border-radius:50%;background:#fff;object-fit:cover;box-shadow:0 25px 60px rgba(0,0,0,.35)}
 .seal::before{content:'';position:absolute;inset:0;border-radius:50%;border:2px dashed rgba(201,162,74,.65);animation:spin 40s linear infinite}
 .seal::after{content:'';position:absolute;inset:3%;border-radius:50%;border:1px solid rgba(201,162,74,.35)}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -171,16 +171,19 @@ nav{display:flex;align-items:center;justify-content:space-between;height:72px;ga
 .due-date .d{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;padding:2px 0 0}
 .due-date .y{font-size:.68rem;color:var(--muted);padding-bottom:3px}
 .due-body{flex:1;min-width:0}
-.due-body h4{font-size:.97rem;margin-bottom:6px}
+.due-body h4{font-size:.97rem;margin-bottom:4px}
+.due-sub{font-size:.8rem;color:var(--muted);margin-bottom:6px;line-height:1.45}
 .due-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.78rem}
 .tag{padding:2px 9px;border-radius:50px;background:var(--bg);color:var(--muted);font-weight:600}
+.tag.chs{background:rgba(201,162,74,.18);color:#8f6a1f}
+[data-theme="dark"] .tag.chs{color:var(--gold-l)}
 .left{font-weight:700;color:var(--muted)}
 .left.urgent{color:#d14b4b}
 .left.soon{color:#b8892f}
 .gcal{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:.8rem;font-weight:600;color:var(--accent);text-decoration:none}
 .gcal .ic{width:15px;height:15px}
 .gcal:hover{text-decoration:underline}
-.cal-note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:26px;max-width:760px;margin-left:auto;margin-right:auto}
+.cal-note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:26px;max-width:800px;margin-left:auto;margin-right:auto}
 
 /* About */
 .about-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:40px;align-items:start}
@@ -367,7 +370,7 @@ footer a:hover{color:var(--gold-l)}
 
 <!-- Icon sprite -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.840 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
@@ -573,17 +576,18 @@ footer a:hover{color:var(--gold-l)}
     <div class="sec-head reveal">
       <span class="kicker">Compliance Calendar</span>
       <h2>Upcoming Due Dates</h2>
-      <p>TDS and Income Tax Return deadlines for individuals and co-operative housing societies. Add any date to your Google Calendar in one tap.</p>
+      <p>Housing society compliances under the MCS Act, TDS, and Income Tax Return deadlines for individuals and societies. Add any date to your Google Calendar in one tap.</p>
       <div class="divider"></div>
     </div>
     <div class="cal-filters">
       <button class="chip-btn active" data-cat="All">All</button>
+      <button class="chip-btn" data-cat="CHS">CHS Compliance</button>
       <button class="chip-btn" data-cat="TDS">TDS</button>
       <button class="chip-btn" data-cat="IND">ITR – Individuals</button>
       <button class="chip-btn" data-cat="SOC">ITR – Societies</button>
     </div>
     <div class="cal-grid" id="calGrid"></div>
-    <p class="cal-note">Due dates as per the Income-tax Act, 2025 and Income-tax Rules, 2026 (TDS returns in Form 138 for salary and Form 140 for non-salary payments). The government sometimes extends deadlines, so please call us to confirm the latest position.</p>
+    <p class="cal-note">CHS dates as per the Maharashtra Co-operative Societies Act, 1960 and Model Bye-laws, for the financial year ending 31 March. The Form O date assumes the audit report is dated 31 July; it is actually due within 3 months of your society's audit report date. TDS and ITR dates are as per the Income-tax Act, 2025 (TDS returns in Form 138 for salary and Form 140 for non-salary). The Government sometimes extends deadlines, so please call us to confirm the latest position.</p>
   </div>
 </section>
 
@@ -964,35 +968,54 @@ $('#mEnquire').addEventListener('click', () => {
   $('#estimate').scrollIntoView({ behavior: 'smooth' });
 });
 
-/* Compliance calendar – TDS, ITR (Individuals) and ITR (Co-op Housing Societies) only */
+/* Compliance calendar – CHS (MCS Act), TDS, ITR (Individuals) and ITR (Societies) */
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const MSHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 function buildDeadlines() {
   const today = new Date(); today.setHours(0, 0, 0, 0);
   const list = [];
-  const add = (y, m, d, cats, tag, title) => {
+  const add = (y, m, d, cats, tag, title, sub) => {
     const dt = new Date(y, m, d);
-    if (dt >= today) list.push({ dt, cats, tag, title });
+    if (dt >= today) list.push({ dt, cats, tag, title, sub: sub || '' });
   };
   const y0 = today.getFullYear();
   for (let y = y0; y <= y0 + 1; y++) {
-    // TDS payment – 7th of next month (March deductions: 30 April)
+    const fy = (y - 1) + '-' + String(y).slice(-2); // e.g. 2026-27 for dates in 2027
+
+    // ---- CHS compliance (Maharashtra Co-operative Societies Act, 1960) ----
+    add(y, 4, 15, ['CHS'], 'CHS Compliance', 'Finalise annual accounts & hand over to auditor',
+      'Within 45 days of close of FY ' + fy + '. Accounts should reach the auditor by this date.');
+    add(y, 6, 31, ['CHS'], 'CHS Compliance', 'Statutory audit to be completed',
+      'Audit of FY ' + fy + ' accounts within 4 months of year end (Sec. 81).');
+    add(y, 8, 15, ['CHS'], 'CHS Compliance', 'Last date to issue AGM notice',
+      'Minimum 14 clear days\u2019 notice to members before an AGM on 30 September.');
+    add(y, 8, 30, ['CHS'], 'CHS Compliance', 'Annual General Meeting (AGM)',
+      'Within 6 months of year end (Sec. 75). Adopt audited accounts, audit report and appoint auditor.');
+    add(y, 8, 30, ['CHS'], 'CHS Compliance', 'Annual returns to Registrar',
+      'Within 6 months of close of FY ' + fy + '.');
+    add(y, 9, 31, ['CHS'], 'CHS Compliance', 'Form O – Audit rectification report',
+      'Due within 3 months of the audit report date. Shown here assuming the report is dated 31 July.');
+
+    // ---- TDS ----
     for (let m = 0; m < 12; m++) {
       if (m !== 3) add(y, m, 7, ['TDS'], 'TDS', 'TDS payment for ' + MONTHS[(m + 11) % 12] + ' deductions');
     }
     add(y, 3, 30, ['TDS'], 'TDS', 'TDS payment for March deductions');
-    // Quarterly TDS returns – Form 138 (salary) / Form 140 (non-salary)
     add(y, 6, 31, ['TDS'], 'TDS', 'TDS return Q1 (Apr–Jun) – Form 138 / Form 140');
     add(y, 9, 31, ['TDS'], 'TDS', 'TDS return Q2 (Jul–Sep) – Form 138 / Form 140');
     add(y, 0, 31, ['TDS'], 'TDS', 'TDS return Q3 (Oct–Dec) – Form 138 / Form 140');
     add(y, 4, 31, ['TDS'], 'TDS', 'TDS return Q4 (Jan–Mar) – Form 138 / Form 140');
-    // ITR – Individuals
+
+    // ---- ITR – Individuals ----
     add(y, 6, 31, ['IND'], 'ITR – Individuals', 'ITR – salaried individuals & pensioners (ITR-1 / ITR-2)');
     add(y, 7, 31, ['IND'], 'ITR – Individuals', 'ITR – business / professional income, no tax audit (ITR-3 / ITR-4)');
     add(y, 9, 31, ['IND'], 'ITR – Individuals', 'ITR – individuals liable to tax audit');
-    // ITR – Co-operative Housing Societies
-    add(y, 9, 31, ['SOC'], 'ITR – Societies', 'ITR-5 – Co-operative housing societies (accounts audited under MCS Act)');
-    // Common
+
+    // ---- ITR – Co-operative Housing Societies ----
+    add(y, 9, 31, ['SOC', 'CHS'], 'ITR – Societies', 'ITR-5 – Co-operative housing societies',
+      'Accounts are audited under the MCS Act, so the 31 October due date applies.');
+
+    // ---- Common ----
     add(y, 11, 31, ['IND', 'SOC'], 'ITR – All', 'Belated ITR – last date');
     add(y, 2, 31, ['IND', 'SOC'], 'ITR – All', 'Revised ITR – last date');
   }
@@ -1003,18 +1026,19 @@ let calFilter = 'All';
 const ymd = d => d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
 function renderCal() {
   const today = new Date(); today.setHours(0, 0, 0, 0);
-  const items = DEADLINES.filter(x => calFilter === 'All' || x.cats.indexOf(calFilter) > -1).slice(0, 9);
+  const items = DEADLINES.filter(x => calFilter === 'All' || x.cats.indexOf(calFilter) > -1).slice(0, 12);
   $('#calGrid').innerHTML = items.map(x => {
     const days = Math.round((x.dt - today) / 86400000);
     const left = days === 0 ? 'Due today' : days === 1 ? 'Due tomorrow' : 'In ' + days + ' days';
     const cls = days <= 7 ? 'urgent' : days <= 15 ? 'soon' : '';
     const nx = new Date(x.dt); nx.setDate(nx.getDate() + 1);
+    const details = (x.sub ? x.sub + '\n\n' : '') + 'Compliance reminder from Shreedeep Solutions. Need help? Call +91 9004264282 – www.shreedeepsolutions.com';
     const g = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(x.title) +
-      '&dates=' + ymd(x.dt) + '/' + ymd(nx) +
-      '&details=' + encodeURIComponent('Compliance reminder from Shreedeep Solutions. Need help? Call +91 9004264282 – www.shreedeepsolutions.com');
+      '&dates=' + ymd(x.dt) + '/' + ymd(nx) + '&details=' + encodeURIComponent(details);
     return '<div class="card due' + (cls === 'urgent' ? ' urgent-card' : '') + '">' +
       '<div class="due-date"><div class="m">' + MSHORT[x.dt.getMonth()] + '</div><div class="d">' + x.dt.getDate() + '</div><div class="y">' + x.dt.getFullYear() + '</div></div>' +
-      '<div class="due-body"><h4>' + x.title + '</h4><div class="due-meta"><span class="tag">' + x.tag + '</span><span class="left ' + cls + '">' + left + '</span></div>' +
+      '<div class="due-body"><h4>' + x.title + '</h4>' + (x.sub ? '<div class="due-sub">' + x.sub + '</div>' : '') +
+      '<div class="due-meta"><span class="tag' + (x.tag === 'CHS Compliance' ? ' chs' : '') + '">' + x.tag + '</span><span class="left ' + cls + '">' + left + '</span></div>' +
       '<a class="gcal" target="_blank" rel="noopener" href="' + g + '">' + ic('calendar') + ' Add to Google Calendar</a></div></div>';
   }).join('');
 }
