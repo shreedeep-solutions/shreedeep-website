@@ -3,139 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Staff ID Verification - Shreedeep Solutions</title>
+<title>Staff ID Verification – Shreedeep Solutions</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#7D2435">
+<link rel="icon" type="image/jpeg" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<script>
+try{if(localStorage.getItem('ss-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}
+</script>
 <style>
-  :root{
-    --brand-start:#4A90E2;
-    --brand-end:#357ABD;
-    --text:#333333;
-    --muted:#666666;
-    --bg:#f7f8fa;
-    --card-bg:#ffffff;
-    --footer-bg:#333333;
-    --ok:#2e9e4f;
-    --ok-bg:#e9f7ec;
-    --bad:#c23b3b;
-    --bad-bg:#fbeaea;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{
-    font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-  }
+:root{--maroon:#A8384B;--maroon-d:#7D2435;--maroon-dd:#4A1521;--gold:#C9A24A;--gold-l:#E9D9A8;--bg:#FBF8F3;--bg-alt:#F4EDE3;--card:#FFFFFF;--text:#2A1A1E;--muted:#6B5A5E;--border:#E8DDD0;--accent:#A8384B;--ok:#16a34a;--ok-bg:rgba(22,163,74,.1);--bad:#d14b4b;--bad-bg:rgba(209,75,75,.1);--shadow:0 18px 45px rgba(74,21,33,.12)}
+[data-theme="dark"]{--bg:#151012;--bg-alt:#1C1618;--card:#241C1F;--text:#F2EAE5;--muted:#B9A9AB;--border:#3A2D31;--accent:#E8899A;--ok:#4ade80;--ok-bg:rgba(74,222,128,.12);--bad:#f87171;--bad-bg:rgba(248,113,113,.12);--shadow:0 18px 45px rgba(0,0,0,.45)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;line-height:1.6;transition:background .3s,color .3s;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:'Playfair Display',Georgia,serif;line-height:1.25}
+.ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 
-  /* Nav — matches the main site's header exactly */
-  nav.container{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:20px 40px;
-    background:#fff;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
-  }
-  nav .logo{
-    font-size:24px;
-    font-weight:bold;
-    background:linear-gradient(45deg, var(--brand-start), var(--brand-end));
-    -webkit-background-clip:text;
-    background-clip:text;
-    -webkit-text-fill-color:transparent;
-    text-decoration:none;
-  }
-  nav a.back-link{
-    color:var(--muted);
-    text-decoration:none;
-    font-size:15px;
-  }
-  nav a.back-link:hover{ color:var(--brand-start); }
+/* Header */
+header{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+nav{max-width:1100px;margin:0 auto;padding:0 20px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:48px;height:48px;border-radius:50%;background:#fff;border:2px solid var(--gold);object-fit:cover}
+.brand-name{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--accent);line-height:1.1;display:block}
+.brand-sub{font-size:.68rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.icon-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer;transition:.3s}
+.icon-btn:hover{border-color:var(--gold);color:var(--gold)}
+.i-sun{display:none}
+[data-theme="dark"] .i-sun{display:block}
+[data-theme="dark"] .i-moon{display:none}
+.back-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:600;font-size:.9rem;color:var(--accent);padding:8px 16px;border-radius:50px;border:1.5px solid var(--border);transition:.3s}
+.back-link:hover{border-color:var(--gold)}
+.back-link .ic{width:16px;height:16px}
 
-  /* Main content */
-  main{
-    flex:1;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:40px 20px;
-  }
-  .wrap{width:100%;max-width:440px;}
-  .heading{
-    text-align:center;
-    margin-bottom:24px;
-  }
-  .heading h1{
-    font-size:26px;
-    color:var(--text);
-    margin-bottom:6px;
-  }
-  .heading p{
-    color:var(--muted);
-    font-size:14px;
-  }
-  .card{
-    background:var(--card-bg);
-    border-radius:16px;
-    padding:36px 28px;
-    box-shadow:0 8px 30px rgba(0,0,0,0.08);
-    text-align:center;
-  }
-  .status-icon{
-    width:68px;height:68px;
-    border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    margin:0 auto 18px;
-    font-size:34px;
-  }
-  .status-icon.ok{background:var(--ok-bg);border:2px solid var(--ok);color:var(--ok);}
-  .status-icon.bad{background:var(--bad-bg);border:2px solid var(--bad);color:var(--bad);}
-  .status-title{font-size:19px;font-weight:700;margin-bottom:6px;}
-  .status-title.ok{color:var(--ok);}
-  .status-title.bad{color:var(--bad);}
-  .status-sub{font-size:13px;color:var(--muted);margin-bottom:24px;}
-  table.details{width:100%;border-collapse:collapse;text-align:left;font-size:14px;}
-  table.details td{padding:10px 4px;border-bottom:1px solid #eee;}
-  table.details td.label{color:var(--muted);width:42%;}
-  table.details td.value{font-weight:600;color:var(--text);}
+/* Banner */
+.banner{background:radial-gradient(circle at 80% 20%,rgba(201,162,74,.2),transparent 45%),linear-gradient(135deg,var(--maroon-dd),var(--maroon-d) 55%,var(--maroon));color:#fff;text-align:center;padding:46px 20px 110px;position:relative;overflow:hidden}
+.banner::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.banner>*{position:relative;z-index:1}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(201,162,74,.15);border:1px solid rgba(201,162,74,.45);color:var(--gold-l);padding:5px 14px;border-radius:50px;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+.kicker .ic{width:15px;height:15px}
+.banner h1{font-size:clamp(1.8rem,4.5vw,2.5rem);margin-bottom:6px}
+.banner p{opacity:.88;font-size:.98rem}
 
-  /* Footer — matches the main site's footer exactly */
-  footer{
-    background:var(--footer-bg);
-    color:#fff;
-    text-align:center;
-    padding:24px 20px;
-    font-size:13px;
-  }
-  footer a{ color:#9ec4f0; text-decoration:none; }
+/* Card */
+main{flex:1;padding:0 20px 60px}
+.card{max-width:480px;margin:-80px auto 0;background:var(--card);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;position:relative;z-index:2;animation:pop .5s ease}
+@keyframes pop{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.card-top{padding:34px 28px 26px;text-align:center;border-bottom:1px solid var(--border)}
+.seal{position:relative;width:118px;height:118px;margin:0 auto 18px}
+.seal img{position:absolute;inset:9px;width:100px;height:100px;border-radius:50%;background:#fff;object-fit:cover;box-shadow:0 8px 22px rgba(0,0,0,.15)}
+.seal::before{content:'';position:absolute;inset:0;border-radius:50%;border:2px dashed rgba(201,162,74,.7);animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.badge{position:absolute;right:-2px;bottom:4px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:3px solid var(--card);color:#fff}
+.badge .ic{width:20px;height:20px;stroke-width:3}
+.badge.ok{background:var(--ok)}
+.badge.bad{background:var(--bad)}
+.status-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:4px}
+.status-title.ok{color:var(--ok)}
+.status-title.bad{color:var(--bad)}
+.status-sub{color:var(--muted);font-size:.92rem}
+.pill{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:5px 14px;border-radius:50px;font-size:.8rem;font-weight:700}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}
+.pill.bad{background:var(--bad-bg);color:var(--bad)}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:currentColor}
+.details{padding:8px 28px 10px}
+.row{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--border);font-size:.95rem}
+.row:last-child{border-bottom:none}
+.row .label{color:var(--muted);display:flex;align-items:center;gap:8px}
+.row .label .ic{width:17px;height:17px;color:var(--gold)}
+.row .value{font-weight:600;text-align:right}
+.checked{background:var(--bg-alt);padding:12px 28px;font-size:.8rem;color:var(--muted);text-align:center}
+.confirm{padding:22px 28px 26px;border-top:1px solid var(--border)}
+.confirm h2{font-size:1.05rem;margin-bottom:4px}
+.confirm p{font-size:.86rem;color:var(--muted);margin-bottom:14px}
+.lines{display:grid;gap:10px}
+.line{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 14px;border:1px solid var(--border);border-radius:12px}
+.line .num{font-weight:600;color:var(--accent);text-decoration:none}
+.line .acts{display:flex;gap:6px}
+.mini{font-size:.76rem;padding:5px 11px;border-radius:50px;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:5px}
+.mini .ic{width:13px;height:13px}
+.mini.call{background:rgba(168,56,75,.1);color:var(--accent)}
+.mini.wa{background:rgba(37,211,102,.14);color:#1a9e4b}
+.note{max-width:480px;margin:18px auto 0;text-align:center;font-size:.82rem;color:var(--muted)}
+
+/* Footer */
+footer{background:var(--maroon-dd);color:#E9DCDD;text-align:center;padding:24px 20px;font-size:.85rem}
+footer .tag{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-l);display:block;margin-bottom:6px}
+footer a{color:var(--gold-l);text-decoration:none}
+
+@media(max-width:560px){
+  .brand-sub{display:none}
+  .brand-name{font-size:1.1rem}
+  .back-link span{display:none}
+  .back-link{padding:9px}
+  .card-top,.details,.confirm{padding-left:20px;padding-right:20px}
+  .checked{padding-left:20px;padding-right:20px}
+}
 </style>
 </head>
 <body>
 
-  <nav class="container">
-    <a href="https://www.shreedeepsolutions.com" class="logo">Shreedeep Solutions</a>
-    <a href="https://www.shreedeepsolutions.com" class="back-link">&larr; Back to main site</a>
-  </nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+  <symbol id="i-hash" viewBox="0 0 24 24"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
+</svg>
 
-  <main>
-    <div class="wrap">
-      <div class="heading">
-        <h1>Staff ID Verification</h1>
-        <p>Scan result for a Shreedeep Solutions staff identity card</p>
-      </div>
-      <div class="card" id="card"></div>
+<header>
+  <nav>
+    <a href="https://www.shreedeepsolutions.com" class="brand">
+      <img src="logo.jpg" alt="Shreedeep Solutions logo">
+      <span><span class="brand-name">Shreedeep Solutions</span><span class="brand-sub">Society Accounting &amp; Compliance</span></span>
+    </a>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">
+        <svg class="ic i-moon"><use href="#i-moon"/></svg>
+        <svg class="ic i-sun"><use href="#i-sun"/></svg>
+      </button>
+      <a href="https://www.shreedeepsolutions.com" class="back-link"><svg class="ic"><use href="#i-left"/></svg><span>Main site</span></a>
     </div>
-  </main>
+  </nav>
+</header>
 
-  <footer>
-    &copy; 2025 Shreedeep Solutions. All rights reserved. | Professional Accounting &amp; Management Services
-  </footer>
+<section class="banner">
+  <span class="kicker"><svg class="ic"><use href="#i-shield"/></svg> Official Verification</span>
+  <h1>Staff ID Verification</h1>
+  <p>Scan result for a Shreedeep Solutions staff identity card</p>
+</section>
+
+<main>
+  <div class="card" id="card"></div>
+  <p class="note">This page verifies identity cards issued by Shreedeep Solutions, Airoli, Navi Mumbai. If anything looks wrong, please contact us before sharing any documents or making any payment.</p>
+</main>
+
+<footer>
+  <span class="tag">Your Success = Our Accuracy + Efforts + Integrity + Trust</span>
+  &copy; <span id="year">2026</span> Shreedeep Solutions. All rights reserved. | <a href="https://www.shreedeepsolutions.com">www.shreedeepsolutions.com</a>
+</footer>
 
 <script>
 // ---- Staff record database ------------------------------------------------
 // To add, remove, or deactivate a staff member, edit this object and
-// re-upload the file. No server or database needed.
+// re-upload the file. Set status to "Revoked" to cancel a card.
 const EMPLOYEES = {
   "SS-00001": { name: "Pratibha Yadav",  designation: "Billing Executive",                 status: "Active" },
   "SS-00002": { name: "Sanya Kori",      designation: "Accounts Executive",                status: "Active" },
@@ -144,47 +164,96 @@ const EMPLOYEES = {
 };
 // ---------------------------------------------------------------------------
 
-function getParam(name){
+const PHONES = [
+  { num: '919004264282', label: '+91 90042 64282' },
+  { num: '919004262639', label: '+91 90042 62639' }
+];
+
+const ic = n => '<svg class="ic"><use href="#i-' + n + '"/></svg>';
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.getElementById('themeBtn').addEventListener('click', () => {
+  const d = document.documentElement;
+  const dark = d.getAttribute('data-theme') === 'dark';
+  if (dark) d.removeAttribute('data-theme'); else d.setAttribute('data-theme', 'dark');
+  try { localStorage.setItem('ss-theme', dark ? 'light' : 'dark'); } catch (e) {}
+});
+
+function getParam(name) {
   return new URL(window.location.href).searchParams.get(name);
 }
 
-function renderInvalid(cardEl, msg){
-  cardEl.innerHTML = `
-    <div class="status-icon bad">&#10007;</div>
-    <div class="status-title bad">Not Verified</div>
-    <div class="status-sub">${msg}</div>
-  `;
+function checkedAt() {
+  return new Date().toLocaleString('en-IN', {
+    timeZone: 'Asia/Kolkata', day: '2-digit', month: 'short', year: 'numeric',
+    hour: '2-digit', minute: '2-digit', hour12: true
+  }) + ' IST';
 }
 
-function renderValid(cardEl, id, data){
-  cardEl.innerHTML = `
-    <div class="status-icon ok">&#10003;</div>
-    <div class="status-title ok">Valid Staff ID</div>
-    <div class="status-sub">This card was issued by Shreedeep Solutions</div>
-    <table class="details">
-      <tr><td class="label">Name</td><td class="value">${data.name}</td></tr>
-      <tr><td class="label">Designation</td><td class="value">${data.designation}</td></tr>
-      <tr><td class="label">Employee ID</td><td class="value">${id}</td></tr>
-      <tr><td class="label">Status</td><td class="value">${data.status}</td></tr>
-    </table>
-  `;
+function confirmBlock(id) {
+  const text = id
+    ? 'Hello Shreedeep Solutions, I would like to confirm staff ID ' + id + '.'
+    : 'Hello Shreedeep Solutions, I would like to verify a staff ID card.';
+  return '<div class="confirm"><h2>Confirm by phone</h2>' +
+    '<p>For extra assurance, you can call or WhatsApp our office directly.</p><div class="lines">' +
+    PHONES.map(p =>
+      '<div class="line"><a class="num" href="tel:+' + p.num + '">' + p.label + '</a><span class="acts">' +
+      '<a class="mini call" href="tel:+' + p.num + '">' + ic('phone') + 'Call</a>' +
+      '<a class="mini wa" target="_blank" rel="noopener" href="https://wa.me/' + p.num + '?text=' + encodeURIComponent(text) + '">' + ic('wa') + 'WhatsApp</a>' +
+      '</span></div>').join('') +
+    '</div></div>';
 }
 
-(function init(){
+function seal(ok) {
+  return '<div class="seal"><img src="logo.jpg" alt="Shreedeep Solutions emblem">' +
+    '<span class="badge ' + (ok ? 'ok' : 'bad') + '">' + ic(ok ? 'check' : 'x') + '</span></div>';
+}
+
+function renderInvalid(cardEl, msg, id) {
+  cardEl.innerHTML =
+    '<div class="card-top">' + seal(false) +
+      '<div class="status-title bad">Not Verified</div>' +
+      '<div class="status-sub">' + esc(msg) + '</div>' +
+      '<span class="pill bad"><span class="dot"></span>Do not accept this card</span>' +
+    '</div>' +
+    '<div class="checked">Checked on ' + checkedAt() + '</div>' +
+    confirmBlock(id);
+}
+
+function renderValid(cardEl, id, data) {
+  cardEl.innerHTML =
+    '<div class="card-top">' + seal(true) +
+      '<div class="status-title ok">Valid Staff ID</div>' +
+      '<div class="status-sub">This card was issued by Shreedeep Solutions</div>' +
+      '<span class="pill ok"><span class="dot"></span>Verified</span>' +
+    '</div>' +
+    '<div class="details">' +
+      '<div class="row"><span class="label">' + ic('user') + 'Name</span><span class="value">' + esc(data.name) + '</span></div>' +
+      '<div class="row"><span class="label">' + ic('briefcase') + 'Designation</span><span class="value">' + esc(data.designation) + '</span></div>' +
+      '<div class="row"><span class="label">' + ic('hash') + 'Employee ID</span><span class="value">' + esc(id) + '</span></div>' +
+      '<div class="row"><span class="label">' + ic('activity') + 'Status</span><span class="value">' + esc(data.status) + '</span></div>' +
+    '</div>' +
+    '<div class="checked">Checked on ' + checkedAt() + '</div>' +
+    confirmBlock(id);
+}
+
+(function init() {
   const cardEl = document.getElementById('card');
   const empId = getParam('id');
 
-  if(!empId){
-    renderInvalid(cardEl, 'No employee ID provided in this link.');
+  if (!empId) {
+    renderInvalid(cardEl, 'No employee ID provided in this link.', '');
     return;
   }
   const data = EMPLOYEES[empId];
-  if(!data){
-    renderInvalid(cardEl, 'No record found for ID ' + empId + '.');
+  if (!data) {
+    renderInvalid(cardEl, 'No record found for ID ' + empId + '.', '');
     return;
   }
-  if(data.status && data.status.toLowerCase() === 'revoked'){
-    renderInvalid(cardEl, 'This ID card has been revoked.');
+  if (data.status && data.status.toLowerCase() === 'revoked') {
+    renderInvalid(cardEl, 'This ID card has been revoked.', empId);
     return;
   }
   renderValid(cardEl, empId, data);
