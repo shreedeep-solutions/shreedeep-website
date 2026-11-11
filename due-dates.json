@@ -1,0 +1,15 @@
+{
+  "_help": "Government extensions for the website's compliance calendar. 'extensions' moves a built-in date (match by id, e.g. soc-itr-2026, tds-q3-2027, gst-r9-2026, chs-agm-2027). 'extra' adds a one-off date (cat: CHS, TDS, GST or SOC). 'hide' removes a built-in date. Dates are YYYY-MM-DD. Update 'updated' whenever you check.",
+  "updated": "2026-11-11",
+  "extensions": [
+    {
+      "id": "soc-itr-2026",
+      "date": "2026-11-21",
+      "note": "CBDT extended the due date for audit cases for AY 2026-27 (FY 2025-26).",
+      "source": "https://incometaxindia.gov.in/documents/d/guest/circular-7-2026-pdf",
+      "sourceName": "CBDT Circular No. 7/2026"
+    }
+  ],
+  "extra": [],
+  "hide": []
+}

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shreedeep Solutions | Housing Society Accounting, Audit &amp; Compliance – Navi Mumbai, Thane &amp; Mumbai</title>
-<meta name="description" content="Shreedeep Solutions provides accounting, management, statutory audit, TDS, GST and ITR services to 120+ co-operative housing societies across Navi Mumbai, Thane and Mumbai.">
+<meta name="description" content="Shreedeep Solutions provides accounting, management, statutory audit, TDS, GST and society ITR services to 120+ co-operative housing societies across Navi Mumbai, Thane and Mumbai.">
 <link rel="canonical" href="https://shreedeepsolutions.com/">
 <meta name="theme-color" content="#7D2435">
 <link rel="icon" type="image/jpeg" href="logo.jpg">
@@ -188,6 +188,16 @@ a.area-card:hover{border-color:rgba(201,162,74,.5)}
 .gcal .ic{width:15px;height:15px}
 .gcal:hover{text-decoration:underline}
 .cal-note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:26px;max-width:800px;margin-left:auto;margin-right:auto}
+.cal-updated{text-align:center;font-size:.82rem;color:var(--muted);margin-top:18px}
+.cal-updated:empty{display:none}
+.cal-empty{grid-column:1/-1;text-align:center;color:var(--muted)}
+.ext-card{border-left:4px solid var(--gold)}
+.due-ext{font-size:.78rem;line-height:1.45;margin:2px 0 8px;color:var(--muted)}
+.ext-badge{display:inline-block;background:rgba(201,162,74,.2);color:#8f6a1f;font-weight:700;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:50px}
+[data-theme="dark"] .ext-badge{color:var(--gold-l)}
+.ext-note{display:block;margin-top:4px}
+.ext-src{display:inline-block;margin-top:3px;color:var(--accent);font-weight:600}
+.fg label .opt{font-weight:400;color:var(--muted)}
 
 /* About */
 .about-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:40px;align-items:start}
@@ -509,14 +519,14 @@ footer a:hover{color:var(--gold-l)}
       </div>
       <div class="card service" data-service="gst" role="button" tabindex="0">
         <div class="s-icon"><svg class="ic"><use href="#i-briefcase"/></svg></div>
-        <h3>GST Returns &amp; Audit</h3>
+        <h3>GST Returns</h3>
         <p>Applicability checks, registration, monthly and annual returns, and notice support.</p>
         <span class="more">View details <svg class="ic"><use href="#i-right"/></svg></span>
       </div>
       <div class="card service" data-service="itr" role="button" tabindex="0">
-        <div class="s-icon"><svg class="ic"><use href="#i-user"/></svg></div>
-        <h3>Individual ITR</h3>
-        <p>Accurate income tax returns for salaried individuals, professionals and pensioners.</p>
+        <div class="s-icon"><svg class="ic"><use href="#i-shield"/></svg></div>
+        <h3>Society Income Tax (ITR-5)</h3>
+        <p>Income tax return of your housing society, filed correctly and on time with every eligible deduction.</p>
         <span class="more">View details <svg class="ic"><use href="#i-right"/></svg></span>
       </div>
     </div>
@@ -541,7 +551,7 @@ footer a:hover{color:var(--gold-l)}
       <div class="card value">
         <div class="v-icon"><svg class="ic"><use href="#i-trend"/></svg></div>
         <h3>Efforts</h3>
-        <p>We follow up on records, dues and paperwork so your committee doesn't have to.</p>
+        <p>We follow up on records, bank statements and paperwork so your committee doesn't have to.</p>
       </div>
       <div class="card value">
         <div class="v-icon"><svg class="ic"><use href="#i-checkc"/></svg></div>
@@ -581,18 +591,19 @@ footer a:hover{color:var(--gold-l)}
     <div class="sec-head reveal">
       <span class="kicker">Compliance Calendar</span>
       <h2>Upcoming Due Dates</h2>
-      <p>Housing society compliances under the MCS Act, TDS, and Income Tax Return deadlines for individuals and societies. Add any date to your Google Calendar in one tap.</p>
+      <p>Housing society compliances under the MCS Act, TDS, GST and the society's income tax return. Dates update automatically when the Government notifies an extension. Add any date to your Google Calendar in one tap.</p>
       <div class="divider"></div>
     </div>
     <div class="cal-filters">
       <button class="chip-btn active" data-cat="All">All</button>
       <button class="chip-btn" data-cat="CHS">CHS Compliance</button>
       <button class="chip-btn" data-cat="TDS">TDS</button>
-      <button class="chip-btn" data-cat="IND">ITR – Individuals</button>
-      <button class="chip-btn" data-cat="SOC">ITR – Societies</button>
+      <button class="chip-btn" data-cat="GST">GST</button>
+      <button class="chip-btn" data-cat="SOC">Society ITR</button>
     </div>
     <div class="cal-grid" id="calGrid"></div>
-    <p class="cal-note">CHS dates as per the Maharashtra Co-operative Societies Act, 1960 and Model Bye-laws, for the financial year ending 31 March. The Form O date assumes the audit report is dated 31 July; it is actually due within 3 months of your society's audit report date. TDS and ITR dates are as per the Income-tax Act, 2025 (TDS returns in Form 138 for salary and Form 140 for non-salary). The Government sometimes extends deadlines, so please call us to confirm the latest position.</p>
+    <p class="cal-updated" id="calUpdated"></p>
+    <p class="cal-note">CHS dates as per the Maharashtra Co-operative Societies Act, 1960 and Model Bye-laws, for the financial year ending 31 March. The Form O date assumes the audit report is dated 31 July; it is actually due within 3 months of your society's audit report date. TDS dates are as per the Income-tax Act, 2025 (quarterly TDS return in Form 140). GST dates are for monthly filers and appear under the GST filter only, since most housing societies are not registered under GST. When the Government extends a due date, the new date is shown here with an <b>Extended</b> label and a link to the official notification. Please call us if you are unsure which date applies to your society.</p>
   </div>
 </section>
 
@@ -608,7 +619,7 @@ footer a:hover{color:var(--gold-l)}
         <li><svg class="ic"><use href="#i-check"/></svg>Specialists in co-operative housing societies</li>
         <li><svg class="ic"><use href="#i-check"/></svg>Statutory audit reports in Marathi</li>
         <li><svg class="ic"><use href="#i-check"/></svg>Bank &amp; cash reconciliation every period</li>
-        <li><svg class="ic"><use href="#i-check"/></svg>Timely TDS, GST &amp; ITR filings</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Timely TDS, GST &amp; society ITR filings</li>
         <li><svg class="ic"><use href="#i-check"/></svg>Smooth takeover from previous accountant</li>
         <li><svg class="ic"><use href="#i-check"/></svg>Single point of contact for your committee</li>
       </ul>
@@ -656,7 +667,7 @@ footer a:hover{color:var(--gold-l)}
           <div class="fg"><label for="f-name">Contact person name *</label><input id="f-name" type="text" autocomplete="name" placeholder="e.g. Ramesh Patil"><div class="err-msg">Please enter your name</div></div>
           <div class="row">
             <div class="fg"><label for="f-phone">Mobile number *</label><input id="f-phone" type="tel" autocomplete="tel" placeholder="10-digit mobile"><div class="err-msg">Enter a valid 10-digit mobile number</div></div>
-            <div class="fg"><label for="f-email">Email address *</label><input id="f-email" type="email" autocomplete="email" placeholder="you@example.com"><div class="err-msg">Enter a valid email address</div></div>
+            <div class="fg"><label for="f-email">Email address <span class="opt">(optional)</span></label><input id="f-email" type="email" autocomplete="email" placeholder="you@example.com"><div class="err-msg">This email address looks incomplete. Correct it or leave it blank.</div></div>
           </div>
           <div class="fg"><label for="f-role">Your designation in the society</label>
             <select id="f-role"><option value="">Select (optional)</option><option>Chairman</option><option>Secretary</option><option>Treasurer</option><option>Committee Member</option><option>Member</option><option>Other</option></select>
@@ -685,8 +696,8 @@ footer a:hover{color:var(--gold-l)}
             <label class="svc-opt"><input type="checkbox" name="svc" value="Society Management">Society Management</label>
             <label class="svc-opt"><input type="checkbox" name="svc" value="Audit">Audit</label>
             <label class="svc-opt"><input type="checkbox" name="svc" value="TDS Returns">TDS Returns</label>
-            <label class="svc-opt"><input type="checkbox" name="svc" value="GST Returns &amp; Audit">GST Returns &amp; Audit</label>
-            <label class="svc-opt"><input type="checkbox" name="svc" value="Individual ITR">Individual ITR</label>
+            <label class="svc-opt"><input type="checkbox" name="svc" value="GST Returns">GST Returns</label>
+            <label class="svc-opt"><input type="checkbox" name="svc" value="Society ITR">Society ITR</label>
           </div>
           <div id="svcErr">Please select at least one service</div>
           <div class="fg"><label for="f-details">Describe the work required</label><textarea id="f-details" placeholder="e.g. Monthly billing &amp; accounts, pending accounts from last year, audit support…"></textarea></div>
@@ -804,7 +815,7 @@ footer a:hover{color:var(--gold-l)}
         <li><a href="#services">Society Accounting</a></li>
         <li><a href="#services">Society Management</a></li>
         <li><a href="#services">Audit Services</a></li>
-        <li><a href="#services">TDS, GST &amp; ITR</a></li>
+        <li><a href="#services">TDS, GST &amp; Society ITR</a></li>
       </ul>
     </div>
     <div>
@@ -965,19 +976,19 @@ const SERVICES = {
     items: ['Maintenance bill generation (monthly, bi-monthly or quarterly)', 'Receipt entries and member-wise ledgers with arrears &amp; interest', 'Bank reconciliation and cash-in-hand verification', 'Receipts &amp; Payments statement for every period', 'Annual Income &amp; Expenditure account and Balance Sheet', 'Audit-ready records and schedules'] },
   mgmt: { icon: 'users', title: 'Society Management', value: 'Society Management',
     desc: 'Administrative support that keeps your committee organised and your members informed.',
-    items: ['Member records, share certificates and statutory registers', 'AGM / SGM notices, agenda and minutes drafting', 'Defaulter follow-up and dues reminders', 'Correspondence with members and authorities', 'Documentation for transfers, nominations and NOCs', 'Smooth handover from your previous accountant'] },
+    items: ['Member records, share certificates and statutory registers', 'AGM / SGM notices, agenda and minutes drafting', 'Member-wise outstanding dues statements for the committee', 'Correspondence with members and authorities', 'Documentation for transfers, nominations and NOCs', 'Smooth handover from your previous accountant'] },
   audit: { icon: 'search', title: 'Audit Services', value: 'Audit',
     desc: 'Statutory and internal audit for housing societies, with clear reporting your committee can act on.',
     items: ['Statutory audit under the Maharashtra Co-operative Societies Act', 'Audit reports in the prescribed format, including Marathi', 'Internal audit for larger societies', 'Assistance with the audit rectification report (Form O)', 'Review of past irregularities with corrective suggestions'] },
   tds: { icon: 'file', title: 'TDS Returns', value: 'TDS Returns',
     desc: 'End-to-end TDS compliance under the Income-tax Act, 2025, so your society never pays late fees or interest.',
-    items: ['TDS computation on contractor, professional and salary payments', 'Monthly TDS challan payments by the 7th', 'Quarterly returns – Form 138 (salary) and Form 140 (non-salary)', 'TDS certificates to deductees', 'Correction returns and TRACES notice handling'] },
-  gst: { icon: 'briefcase', title: 'GST Returns & Audit', value: 'GST Returns & Audit',
-    desc: 'GST applicability review, registration and timely return filing for societies and businesses.',
-    items: ['GST applicability check for your society', 'GST registration', 'GSTR-1 and GSTR-3B filing', 'GSTR-9 annual return and reconciliation', 'Notice replies and advisory'] },
-  itr: { icon: 'user', title: 'Individual ITR', value: 'Individual ITR',
-    desc: 'Accurate income tax returns for salaried individuals, professionals, pensioners and society members.',
-    items: ['ITR preparation and e-filing', 'Annual Information Statement (AIS) reconciliation', 'Deduction review to reduce tax legally', 'Refund tracking and follow-up', 'Response to income tax notices'] }
+    items: ['TDS computation on contractor, professional and rent payments', 'Monthly TDS challan payments by the 7th', 'Quarterly TDS returns in Form 140', 'TDS certificates to deductees', 'Correction returns and TRACES notice handling'] },
+  gst: { icon: 'briefcase', title: 'GST Returns', value: 'GST Returns',
+    desc: 'GST applicability review, registration and timely return filing for housing societies.',
+    items: ['GST applicability check for your society', 'GST registration', 'GSTR-1 and GSTR-3B filing', 'GSTR-9 annual return, where applicable', 'Notice replies and advisory'] },
+  itr: { icon: 'shield', title: 'Society Income Tax (ITR-5)', value: 'Society ITR',
+    desc: 'Income tax return of your co-operative housing society, prepared from the audited accounts and filed on time.',
+    items: ['ITR-5 preparation and e-filing for the society', 'Deductions available to co-operative societies, such as interest from co-operative banks', 'Interest income and TDS credit matched with the AIS', 'Refund tracking and follow-up', 'Replies to income tax notices'] }
 };
 const modal = $('#svcModal');
 let currentSvc = null;
@@ -1005,79 +1016,103 @@ $('#mEnquire').addEventListener('click', () => {
   $('#estimate').scrollIntoView({ behavior: 'smooth' });
 });
 
-/* Compliance calendar – CHS (MCS Act), TDS, ITR (Individuals) and ITR (Societies) */
+/* Compliance calendar – CHS (MCS Act), TDS, GST and Society ITR.
+   Dates follow the built-in rules below every year. Extensions notified by the
+   Government are kept in /due-dates.json, which overrides the matching rule by id. */
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const MSHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-function buildDeadlines() {
-  const today = new Date(); today.setHours(0, 0, 0, 0);
+const TAGS = { CHS: 'CHS Compliance', TDS: 'TDS', GST: 'GST', SOC: 'Society ITR' };
+const fmtDate = d => d.getDate() + ' ' + MSHORT[d.getMonth()] + ' ' + d.getFullYear();
+const parseYMD = v => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || ''); return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null; };
+function ruleDeadlines() {
   const list = [];
-  const add = (y, m, d, cats, tag, title, sub) => {
-    const dt = new Date(y, m, d);
-    if (dt >= today) list.push({ dt, cats, tag, title, sub: sub || '' });
-  };
-  const y0 = today.getFullYear();
-  for (let y = y0; y <= y0 + 1; y++) {
+  const add = (id, y, m, d, cats, title, sub, notInAll) => list.push({ id, dt: new Date(y, m, d), cats, title, sub: sub || '', notInAll: !!notInAll });
+  const y0 = new Date().getFullYear();
+  for (let y = y0 - 1; y <= y0 + 1; y++) {
     const fy = (y - 1) + '-' + String(y).slice(-2);
-
     // CHS compliance (Maharashtra Co-operative Societies Act, 1960)
-    add(y, 4, 15, ['CHS'], 'CHS Compliance', 'Finalise annual accounts & hand over to auditor',
+    add('chs-accounts-' + y, y, 4, 15, ['CHS'], 'Finalise annual accounts & hand over to auditor',
       'Within 45 days of close of FY ' + fy + '. Accounts should reach the auditor by this date.');
-    add(y, 6, 31, ['CHS'], 'CHS Compliance', 'Statutory audit to be completed',
+    add('chs-audit-' + y, y, 6, 31, ['CHS'], 'Statutory audit to be completed',
       'Audit of FY ' + fy + ' accounts within 4 months of year end (Sec. 81).');
-    add(y, 8, 15, ['CHS'], 'CHS Compliance', 'Last date to issue AGM notice',
-      'Minimum 14 clear days\u2019 notice to members before an AGM on 30 September.');
-    add(y, 8, 30, ['CHS'], 'CHS Compliance', 'Annual General Meeting (AGM)',
+    add('chs-agm-notice-' + y, y, 8, 15, ['CHS'], 'Last date to issue AGM notice',
+      'Minimum 14 clear days’ notice to members before an AGM on 30 September.');
+    add('chs-agm-' + y, y, 8, 30, ['CHS'], 'Annual General Meeting (AGM)',
       'Within 6 months of year end (Sec. 75). Adopt audited accounts, audit report and appoint auditor.');
-    add(y, 8, 30, ['CHS'], 'CHS Compliance', 'Annual returns to Registrar',
+    add('chs-returns-' + y, y, 8, 30, ['CHS'], 'Annual returns to Registrar',
       'Within 6 months of close of FY ' + fy + '.');
-    add(y, 9, 31, ['CHS'], 'CHS Compliance', 'Form O – Audit rectification report',
+    add('chs-formo-' + y, y, 9, 31, ['CHS'], 'Form O – Audit rectification report',
       'Due within 3 months of the audit report date. Shown here assuming the report is dated 31 July.');
-
-    // TDS
+    // TDS (Income-tax Act, 2025)
     for (let m = 0; m < 12; m++) {
-      if (m !== 3) add(y, m, 7, ['TDS'], 'TDS', 'TDS payment for ' + MONTHS[(m + 11) % 12] + ' deductions');
+      if (m !== 3) add('tds-pay-' + y + '-' + (m + 1), y, m, 7, ['TDS'], 'TDS payment for ' + MONTHS[(m + 11) % 12] + ' deductions');
     }
-    add(y, 3, 30, ['TDS'], 'TDS', 'TDS payment for March deductions');
-    add(y, 6, 31, ['TDS'], 'TDS', 'TDS return Q1 (Apr–Jun) – Form 138 / Form 140');
-    add(y, 9, 31, ['TDS'], 'TDS', 'TDS return Q2 (Jul–Sep) – Form 138 / Form 140');
-    add(y, 0, 31, ['TDS'], 'TDS', 'TDS return Q3 (Oct–Dec) – Form 138 / Form 140');
-    add(y, 4, 31, ['TDS'], 'TDS', 'TDS return Q4 (Jan–Mar) – Form 138 / Form 140');
-
-    // ITR – Individuals
-    add(y, 6, 31, ['IND'], 'ITR – Individuals', 'ITR – salaried individuals & pensioners (ITR-1 / ITR-2)');
-    add(y, 7, 31, ['IND'], 'ITR – Individuals', 'ITR – business / professional income, no tax audit (ITR-3 / ITR-4)');
-    add(y, 9, 31, ['IND'], 'ITR – Individuals', 'ITR – individuals liable to tax audit');
-
-    // ITR – Co-operative Housing Societies
-    add(y, 9, 31, ['SOC', 'CHS'], 'ITR – Societies', 'ITR-5 – Co-operative housing societies',
-      'Accounts are audited under the MCS Act, so the 31 October due date applies.');
-
-    // Common
-    add(y, 11, 31, ['IND', 'SOC'], 'ITR – All', 'Belated ITR – last date');
-    add(y, 2, 31, ['IND', 'SOC'], 'ITR – All', 'Revised ITR – last date');
+    add('tds-pay-' + y + '-4', y, 3, 30, ['TDS'], 'TDS payment for March deductions');
+    add('tds-q1-' + y, y, 6, 31, ['TDS'], 'TDS return Q1 (Apr–Jun) – Form 140');
+    add('tds-q2-' + y, y, 9, 31, ['TDS'], 'TDS return Q2 (Jul–Sep) – Form 140');
+    add('tds-q3-' + y, y, 0, 31, ['TDS'], 'TDS return Q3 (Oct–Dec) – Form 140');
+    add('tds-q4-' + y, y, 4, 31, ['TDS'], 'TDS return Q4 (Jan–Mar) – Form 140');
+    // GST (monthly filers)
+    for (let m = 0; m < 12; m++) {
+      const prev = MONTHS[(m + 11) % 12];
+      add('gst-r1-' + y + '-' + (m + 1), y, m, 11, ['GST'], 'GSTR-1 for ' + prev, 'Monthly filers. Quarterly (QRMP) filers file GSTR-1 by the 13th after the quarter.', true);
+      add('gst-3b-' + y + '-' + (m + 1), y, m, 20, ['GST'], 'GSTR-3B & GST payment for ' + prev, 'Monthly filers. Quarterly (QRMP) filers in Maharashtra file by the 22nd after the quarter.', true);
+    }
+    add('gst-r9-' + y, y, 11, 31, ['GST'], 'GSTR-9 annual return for FY ' + fy, 'Required only if the society’s aggregate turnover is above ₹2 crore.');
+    // Society income tax return (co-operative housing societies file ITR-5)
+    add('soc-itr-' + y, y, 9, 31, ['SOC', 'CHS'], 'ITR-5 – Co-operative housing societies (FY ' + fy + ')',
+      'Accounts are audited under the MCS Act, so the audit-case due date applies.');
+    add('soc-itr-belated-' + y, y, 11, 31, ['SOC'], 'Belated ITR – last date (FY ' + fy + ')');
+    add('soc-itr-revised-' + (y + 1), y + 1, 2, 31, ['SOC'], 'Revised ITR – last date (FY ' + fy + ')');
   }
-  return list.sort((a, b) => a.dt - b.dt);
+  return list;
 }
-const DEADLINES = buildDeadlines();
+function applyUpdates(list, data) {
+  if (!data) return list;
+  const byId = {};
+  list.forEach(x => { byId[x.id] = x; });
+  (data.extensions || []).forEach(e => {
+    const x = byId[e.id], nd = parseYMD(e.date);
+    if (!x || !nd) return;
+    x.orig = x.dt; x.dt = nd; x.ext = e;
+  });
+  (data.hide || []).forEach(id => { if (byId[id]) byId[id].hidden = true; });
+  (data.extra || []).forEach(e => {
+    const dt = parseYMD(e.date);
+    if (dt && TAGS[e.cat]) list.push({ id: e.id || '', dt, cats: [e.cat], title: e.title || '', sub: e.sub || '', ext: e.source ? e : null, extra: true });
+  });
+  return list;
+}
+let DEADLINES = [];
 let calFilter = 'All';
 const ymd = d => d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
 function renderCal() {
   const today = new Date(); today.setHours(0, 0, 0, 0);
-  const items = DEADLINES.filter(x => calFilter === 'All' || x.cats.indexOf(calFilter) > -1).slice(0, 12);
+  const items = DEADLINES.filter(x => !x.hidden && x.dt >= today && (calFilter === 'All' ? !x.notInAll : x.cats.indexOf(calFilter) > -1))
+    .sort((a, b) => a.dt - b.dt).slice(0, 12);
   $('#calGrid').innerHTML = items.map(x => {
     const days = Math.round((x.dt - today) / 86400000);
     const left = days === 0 ? 'Due today' : days === 1 ? 'Due tomorrow' : 'In ' + days + ' days';
     const cls = days <= 7 ? 'urgent' : days <= 15 ? 'soon' : '';
     const nx = new Date(x.dt); nx.setDate(nx.getDate() + 1);
-    const details = (x.sub ? x.sub + '\n\n' : '') + 'Compliance reminder from Shreedeep Solutions. Need help? Call +91 9004264282 – shreedeepsolutions.com';
+    const tag = TAGS[x.cats[0]];
+    let extHtml = '', extTxt = '';
+    if (x.ext) {
+      extTxt = (x.orig ? 'Extended from ' + fmtDate(x.orig) + '. ' : '') + (x.ext.note || '');
+      extHtml = '<div class="due-ext"><span class="ext-badge">' + (x.orig ? 'Extended' : 'Notified') + '</span>' +
+        (x.orig ? ' from <s>' + fmtDate(x.orig) + '</s>' : '') +
+        (x.ext.note ? '<span class="ext-note">' + esc(x.ext.note) + '</span>' : '') +
+        (x.ext.source ? '<a class="ext-src" target="_blank" rel="noopener" href="' + esc(x.ext.source) + '">' + esc(x.ext.sourceName || 'Official notification') + '</a>' : '') + '</div>';
+    }
+    const details = (x.sub ? x.sub + '\n\n' : '') + (extTxt ? extTxt + '\n\n' : '') + 'Compliance reminder from Shreedeep Solutions. Need help? Call +91 9004264282 – shreedeepsolutions.com';
     const g = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(x.title) +
       '&dates=' + ymd(x.dt) + '/' + ymd(nx) + '&details=' + encodeURIComponent(details);
-    return '<div class="card due' + (cls === 'urgent' ? ' urgent-card' : '') + '">' +
+    return '<div class="card due' + (cls === 'urgent' ? ' urgent-card' : '') + (x.ext ? ' ext-card' : '') + '">' +
       '<div class="due-date"><div class="m">' + MSHORT[x.dt.getMonth()] + '</div><div class="d">' + x.dt.getDate() + '</div><div class="y">' + x.dt.getFullYear() + '</div></div>' +
-      '<div class="due-body"><h4>' + x.title + '</h4>' + (x.sub ? '<div class="due-sub">' + x.sub + '</div>' : '') +
-      '<div class="due-meta"><span class="tag' + (x.tag === 'CHS Compliance' ? ' chs' : '') + '">' + x.tag + '</span><span class="left ' + cls + '">' + left + '</span></div>' +
+      '<div class="due-body"><h4>' + esc(x.title) + '</h4>' + (x.sub ? '<div class="due-sub">' + esc(x.sub) + '</div>' : '') + extHtml +
+      '<div class="due-meta"><span class="tag' + (tag === 'CHS Compliance' ? ' chs' : '') + '">' + tag + '</span><span class="left ' + cls + '">' + left + '</span></div>' +
       '<a class="gcal" target="_blank" rel="noopener" href="' + g + '">' + ic('calendar') + ' Add to Google Calendar</a></div></div>';
-  }).join('');
+  }).join('') || '<p class="cal-empty">No upcoming dates in this category.</p>';
 }
 $$('.chip-btn').forEach(b => b.addEventListener('click', () => {
   $$('.chip-btn').forEach(x => x.classList.remove('active'));
@@ -1085,7 +1120,18 @@ $$('.chip-btn').forEach(b => b.addEventListener('click', () => {
   calFilter = b.dataset.cat;
   renderCal();
 }));
+DEADLINES = ruleDeadlines();
 renderCal();
+fetch('/due-dates.json', { cache: 'no-cache' })
+  .then(r => r.ok ? r.json() : null)
+  .then(data => {
+    if (!data) return;
+    DEADLINES = applyUpdates(ruleDeadlines(), data);
+    renderCal();
+    const u = parseYMD(data.updated);
+    if (u) $('#calUpdated').textContent = 'Due dates last checked against Government notifications on ' + fmtDate(u) + '.';
+  })
+  .catch(() => {});
 
 /* Estimate form */
 const form = $('#estForm');
@@ -1110,7 +1156,8 @@ function validate(n) {
   if (n === 1) {
     ok = setErr('f-name', $('#f-name').value.trim().length < 2) && ok;
     ok = setErr('f-phone', !/^[6-9]\d{9}$/.test(cleanPhone($('#f-phone').value))) && ok;
-    ok = setErr('f-email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('#f-email').value.trim())) && ok;
+    const em = $('#f-email').value.trim();
+    ok = setErr('f-email', em !== '' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) && ok;
   }
   if (n === 2) {
     ok = setErr('f-society', !$('#f-society').value.trim()) && ok;
@@ -1139,7 +1186,7 @@ $$('[data-back]').forEach(b => b.addEventListener('click', () => showStep(step -
 function collect() {
   const f = +$('#f-flats').value || 0, s = +$('#f-shops').value || 0;
   return {
-    name: $('#f-name').value.trim(), phone: $('#f-phone').value.trim(), email: $('#f-email').value.trim(),
+    name: $('#f-name').value.trim(), phone: $('#f-phone').value.trim(), email: $('#f-email').value.trim() || '-',
     role: $('#f-role').value || '-', society: $('#f-society').value.trim(), address: $('#f-address').value.trim(),
     flats: f, shops: s, total: f + s,
     services: $$('input[name="svc"]:checked').map(c => c.value).join(', '),
@@ -1168,7 +1215,7 @@ form.addEventListener('submit', async e => {
         access_key: WEB3FORMS_KEY,
         subject: 'New Estimate Request – ' + d.society,
         from_name: 'Shreedeep Solutions Website',
-        replyto: d.email,
+        ...(d.email !== '-' ? { replyto: d.email } : {}),
         'Contact Person': d.name, 'Designation': d.role, 'Phone': d.phone, 'Email': d.email,
         'Society Name': d.society, 'Society Address': d.address,
         'Flats': d.flats, 'Shops': d.shops, 'Total Units': d.total,
