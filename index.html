@@ -7,12 +7,16 @@
 <meta name="description" content="Shreedeep Solutions provides accounting, management, statutory audit, TDS, GST and society ITR services to 120+ co-operative housing societies across Navi Mumbai, Thane and Mumbai.">
 <link rel="canonical" href="https://shreedeepsolutions.com/">
 <meta name="theme-color" content="#7D2435">
-<link rel="icon" type="image/jpeg" href="logo.jpg">
-<link rel="apple-touch-icon" href="logo.jpg">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="alternate" hreflang="en" href="https://shreedeepsolutions.com/">
+<link rel="alternate" hreflang="mr" href="https://shreedeepsolutions.com/mr/">
+<link rel="alternate" hreflang="x-default" href="https://shreedeepsolutions.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shreedeep Solutions – Society Accounting &amp; Compliance">
 <meta property="og:description" content="Accounting, audit, TDS, GST &amp; ITR services for co-operative housing societies across Navi Mumbai, Thane and Mumbai.">
-<meta property="og:image" content="https://shreedeepsolutions.com/logo.jpg">
+<meta property="og:image" content="https://shreedeepsolutions.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://shreedeepsolutions.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,6 +129,15 @@ nav{display:flex;align-items:center;justify-content:space-between;height:72px;ga
 
 /* Cards */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:1180px){
+  .nav-links{position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:var(--card);box-shadow:0 12px 24px rgba(0,0,0,.12);max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .nav-links.open{max-height:520px}
+  .nav-links li{width:100%}
+  .nav-links a{display:block;padding:14px 24px;border-top:1px solid var(--border)}
+  .nav-links a::after{display:none}
+  .menu-btn{display:grid}
+}
+.nav-links a,.brand-name,.brand-sub{white-space:nowrap}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);transition:transform .35s,box-shadow .35s,border-color .35s;position:relative;overflow:hidden}
 .card h3{font-size:1.25rem;margin-bottom:10px}
@@ -148,6 +161,26 @@ nav{display:flex;align-items:center;justify-content:space-between;height:72px;ga
 .value{text-align:center}
 .value:hover{transform:translateY(-6px);box-shadow:var(--shadow-h)}
 a.area-card{text-decoration:none;color:inherit;display:block}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.f-grid-5{grid-template-columns:1.5fr 1fr 1fr 1fr!important}
+.f-contact{margin-top:14px}
+[hidden]{display:none!important}
+.g-rating{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px;margin-bottom:30px}
+.g-score{display:flex;align-items:center;gap:10px}
+.g-score b{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--accent)}
+.g-score small{color:var(--muted)}
+.stars{display:inline-flex;gap:2px;color:var(--gold)}
+.stars .ic{width:16px;height:16px;fill:currentColor}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:34px}
+.testi blockquote{font-style:italic;margin:10px 0 14px;color:var(--text)}
+.testi figcaption b{display:block}
+.testi figcaption span{color:var(--muted);font-size:.88rem}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:920px;margin:0 auto}
+.chips span{padding:8px 16px;border-radius:50px;background:var(--card);border:1px solid var(--border);font-size:.9rem;font-weight:500}
+.soc-title{text-align:center;font-size:1.2rem;margin-bottom:16px}
+.soc-chips small{color:var(--muted);font-size:.78rem;margin-left:4px}
+@media(max-width:960px){.grid-4,.testi-grid{grid-template-columns:repeat(2,1fr)}.f-grid-5{grid-template-columns:1fr 1fr!important}}
+@media(max-width:600px){.grid-4,.testi-grid{grid-template-columns:1fr}.f-grid-5{grid-template-columns:1fr!important}}
 a.area-card:hover{border-color:rgba(201,162,74,.5)}
 .area-card .more{justify-content:center}
 .v-icon{width:66px;height:66px;margin:0 auto 16px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--gold);color:var(--accent)}
@@ -400,6 +433,11 @@ footer a:hover{color:var(--gold-l)}
   <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
   <symbol id="i-send" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="18"/><line x1="8" y1="18" x2="12" y2="18"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
   <symbol id="i-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
   <symbol id="i-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
   <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
@@ -431,11 +469,13 @@ footer a:hover{color:var(--gold-l)}
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
-      <li><a href="#values">Why Us</a></li>
       <li><a href="#calendar">Due Dates</a></li>
       <li><a href="#areas">Areas</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/tools.html">Tools</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="/mr/" lang="mr" hreflang="mr">मराठी</a></li>
     </ul>
     <div class="nav-actions">
       <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">
@@ -638,6 +678,23 @@ footer a:hover{color:var(--gold-l)}
   </div>
 </section>
 
+<!-- Trust: reviews, testimonials, societies (filled from /site-data.json; hidden while empty) -->
+<section class="section" id="trust" hidden>
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Trusted by Committees</span>
+      <h2>What Our Societies Say</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="g-rating" id="gRating" hidden></div>
+    <div class="testi-grid" id="testiGrid" hidden></div>
+    <div id="socWrap" hidden>
+      <h3 class="soc-title">Some of the Societies We Serve</h3>
+      <div class="chips soc-chips" id="socChips"></div>
+    </div>
+  </div>
+</section>
+
 <!-- Estimate -->
 <section class="section alt" id="estimate">
   <div class="container est-wrap">
@@ -779,11 +836,17 @@ footer a:hover{color:var(--gold-l)}
       <p>Housing society accounting, audit and compliance across Navi Mumbai, Thane and Mumbai.</p>
       <div class="divider"></div>
     </div>
-    <div class="grid-3 reveal">
+    <div class="grid-4 reveal">
+      <a class="card value area-card" href="/society-accountant-airoli.html">
+        <div class="v-icon"><svg class="ic"><use href="#i-pin"/></svg></div>
+        <h3>Airoli</h3>
+        <p>Every sector of Airoli, plus Rabale and Ghansoli. Our office is in Sector-8.</p>
+        <span class="more">Learn more <svg class="ic"><use href="#i-right"/></svg></span>
+      </a>
       <a class="card value area-card" href="/housing-society-accounting-navi-mumbai.html">
         <div class="v-icon"><svg class="ic"><use href="#i-pin"/></svg></div>
         <h3>Navi Mumbai</h3>
-        <p>Airoli, Ghansoli, Vashi, Nerul, Kharghar, Panvel and more. Our home base.</p>
+        <p>Ghansoli, Kopar Khairane, Vashi, Nerul, Kharghar, Panvel and more.</p>
         <span class="more">Learn more <svg class="ic"><use href="#i-right"/></svg></span>
       </a>
       <a class="card value area-card" href="/housing-society-accounting-thane.html">
@@ -802,38 +865,66 @@ footer a:hover{color:var(--gold-l)}
   </div>
 </section>
 
+<!-- Resources -->
+<section class="section" id="resources">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Free Resources</span>
+      <h2>Guides, Calculators &amp; Templates</h2>
+      <p>Practical help for managing committees, free to use and share.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="grid-4 reveal">
+      <a class="card value area-card" href="/guides/"><div class="v-icon"><svg class="ic"><use href="#i-book"/></svg></div><h3>Guides</h3><p>New 2026 society rules, Form O, AGM checklist and changing your accountant.</p><span class="more">Read guides <svg class="ic"><use href="#i-right"/></svg></span></a>
+      <a class="card value area-card" href="/tools.html"><div class="v-icon"><svg class="ic"><use href="#i-calc"/></svg></div><h3>Calculators</h3><p>Interest on late maintenance, sinking &amp; repair fund, and a TDS checker.</p><span class="more">Open tools <svg class="ic"><use href="#i-right"/></svg></span></a>
+      <a class="card value area-card" href="/downloads.html"><div class="v-icon"><svg class="ic"><use href="#i-download"/></svg></div><h3>Templates</h3><p>AGM notice, NOC for sale of flat and an accountant handover checklist.</p><span class="more">Download free <svg class="ic"><use href="#i-right"/></svg></span></a>
+      <a class="card value area-card" href="/software.html"><div class="v-icon"><svg class="ic"><use href="#i-monitor"/></svg></div><h3>Our Software</h3><p>The accounting and register software we built for housing societies.</p><span class="more">See how we work <svg class="ic"><use href="#i-right"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer>
-  <div class="container f-grid">
+  <div class="container f-grid f-grid-5">
     <div>
       <div class="f-brand"><img src="logo.jpg" alt="Shreedeep Solutions logo"><b>Shreedeep Solutions</b></div>
       <p class="f-tag">Your Success = Our Accuracy + Efforts + Integrity + Trust</p>
+      <ul class="f-contact">
+        <li><a href="tel:+919004264282">+91 90042 64282</a></li>
+        <li><a href="tel:+919004262639">+91 90042 62639</a></li>
+        <li><a href="mailto:shreedeepsolutions@gmail.com">shreedeepsolutions@gmail.com</a></li>
+        <li>D204, Shankar Sheela CHS Ltd., Sector-8, Airoli, Navi Mumbai – 400708</li>
+      </ul>
     </div>
     <div>
       <h4>Services</h4>
       <ul>
         <li><a href="#services">Society Accounting</a></li>
-        <li><a href="#services">Society Management</a></li>
-        <li><a href="#services">Audit Services</a></li>
-        <li><a href="#services">TDS, GST &amp; Society ITR</a></li>
+        <li><a href="/society-management-services.html">Society Management</a></li>
+        <li><a href="/chs-statutory-audit.html">Statutory Audit</a></li>
+        <li><a href="/tds-return-housing-society.html">TDS Returns</a></li>
+        <li><a href="/gst-for-housing-societies.html">GST Returns</a></li>
+        <li><a href="/housing-society-income-tax-itr-5.html">Society ITR-5</a></li>
       </ul>
     </div>
     <div>
       <h4>Areas We Serve</h4>
       <ul>
+        <li><a href="/society-accountant-airoli.html">Airoli</a></li>
         <li><a href="/housing-society-accounting-navi-mumbai.html">Navi Mumbai</a></li>
         <li><a href="/housing-society-accounting-thane.html">Thane</a></li>
         <li><a href="/housing-society-accounting-mumbai.html">Mumbai</a></li>
-        <li><a href="#calendar">Due Dates</a></li>
+        <li><a href="/mr/" lang="mr">मराठी</a></li>
       </ul>
     </div>
     <div>
-      <h4>Contact</h4>
+      <h4>Resources</h4>
       <ul>
-        <li><a href="tel:+919004264282">+91 90042 64282</a></li>
-        <li><a href="tel:+919004262639">+91 90042 62639</a></li>
-        <li><a href="mailto:shreedeepsolutions@gmail.com">shreedeepsolutions@gmail.com</a></li>
-        <li>Sector-8, Airoli, Navi Mumbai</li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/tools.html">Free Calculators</a></li>
+        <li><a href="/downloads.html">Free Templates</a></li>
+        <li><a href="/software.html">Our Software</a></li>
+        <li><a href="#calendar">Due Dates Calendar</a></li>
       </ul>
     </div>
   </div>
@@ -872,6 +963,7 @@ footer a:hover{color:var(--gold-l)}
       <ul class="incl" id="mList"></ul>
       <div class="modal-actions">
         <button class="btn btn-maroon" id="mEnquire">Get Estimate for this</button>
+        <a class="btn btn-ghost" id="mMore" href="#" hidden>Full details</a>
         <button class="btn btn-ghost" data-wa-open><svg class="ic"><use href="#i-wa"/></svg> Ask on WhatsApp</button>
       </div>
     </div>
@@ -990,6 +1082,7 @@ const SERVICES = {
     desc: 'Income tax return of your co-operative housing society, prepared from the audited accounts and filed on time.',
     items: ['ITR-5 preparation and e-filing for the society', 'Deductions available to co-operative societies, such as interest from co-operative banks', 'Interest income and TDS credit matched with the AIS', 'Refund tracking and follow-up', 'Replies to income tax notices'] }
 };
+const SERVICE_PAGES = { mgmt: '/society-management-services.html', audit: '/chs-statutory-audit.html', tds: '/tds-return-housing-society.html', gst: '/gst-for-housing-societies.html', itr: '/housing-society-income-tax-itr-5.html' };
 const modal = $('#svcModal');
 let currentSvc = null;
 function openModal(key) {
@@ -999,6 +1092,7 @@ function openModal(key) {
   $('#mTitle').textContent = s.title;
   $('#mDesc').textContent = s.desc;
   $('#mList').innerHTML = s.items.map(i => '<li>' + ic('check') + '<span>' + i + '</span></li>').join('');
+  const more = $('#mMore'); more.hidden = !SERVICE_PAGES[key]; if (SERVICE_PAGES[key]) more.href = SERVICE_PAGES[key];
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -1132,6 +1226,30 @@ fetch('/due-dates.json', { cache: 'no-cache' })
     if (u) $('#calUpdated').textContent = 'Due dates last checked against Government notifications on ' + fmtDate(u) + '.';
   })
   .catch(() => {});
+
+/* Reviews, testimonials and client societies – edit /site-data.json to show them */
+fetch('/site-data.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(d => {
+  if (!d) return;
+  let any = false;
+  const t = (d.testimonials || []).filter(x => x && x.quote && x.name);
+  if (t.length) {
+    $('#testiGrid').innerHTML = t.map(x => '<figure class="card testi"><div class="stars">' + ic('star').repeat(5) + '</div><blockquote>“' + esc(x.quote) + '”</blockquote><figcaption><b>' + esc(x.name) + '</b>' +
+      (x.role || x.society ? '<span>' + esc([x.role, x.society].filter(Boolean).join(', ')) + (x.area ? ' · ' + esc(x.area) : '') + '</span>' : '') + '</figcaption></figure>').join('');
+    $('#testiGrid').hidden = false; any = true;
+  }
+  const soc = (d.societies || []).filter(x => x && x.name);
+  if (soc.length) {
+    $('#socChips').innerHTML = soc.map(x => '<span>' + esc(x.name) + (x.area ? ' <small>' + esc(x.area) + '</small>' : '') + '</span>').join('');
+    $('#socWrap').hidden = false; any = true;
+  }
+  if (d.googleReviewUrl) {
+    const r = d.googleRating, c = d.googleReviewCount;
+    $('#gRating').innerHTML = (r ? '<div class="g-score"><b>' + Number(r).toFixed(1) + '</b><span class="stars">' + ic('star').repeat(Math.round(r)) + '</span>' + (c ? '<small>' + c + ' Google reviews</small>' : '') + '</div>' : '') +
+      '<a class="btn btn-maroon" target="_blank" rel="noopener" href="' + esc(d.googleReviewUrl) + '">Rate us on Google</a>';
+    $('#gRating').hidden = false; any = true;
+  }
+  if (any) $('#trust').hidden = false;
+}).catch(() => {});
 
 /* Estimate form */
 const form = $('#estForm');

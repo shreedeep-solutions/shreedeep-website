@@ -1,0 +1,10 @@
+{
+  "_help": "Fill these in to show the 'What Our Societies Say' section on the homepage. It stays hidden while everything is empty. Only add real reviews and societies that have agreed to be named.",
+  "googleReviewUrl": "",
+  "googleRating": null,
+  "googleReviewCount": null,
+  "testimonials": [],
+  "_testimonialExample": {"quote": "Our bills now go out on time and the audit remarks have come down every year.", "name": "Mr. A. B. Patil", "role": "Secretary", "society": "Example CHS Ltd.", "area": "Airoli"},
+  "societies": [],
+  "_societyExample": {"name": "Example CHS Ltd.", "area": "Airoli"}
+}
