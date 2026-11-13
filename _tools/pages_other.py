@@ -96,10 +96,6 @@ def software():
         <li>%(c)sOld registers in Excel or typed PDF brought in, so nothing has to be re-typed</li>
       </ul>
     </div>''' % dict(c=ic('check')), alt=True)
-    body += '\n' + section('User Guide', 'Every Screen, Step by Step', '''    <div class="prose">
-      <p>The complete Solutions4Society user guide explains every screen and every button — billing, receipts, bank statement upload, reconciliation, member ledgers, final accounts, year-end, and the member, committee and security apps.</p>
-      <p><a class="btn btn-maroon" href="/s4s-guide/">Read the user guide</a> &nbsp; <a class="btn btn-outline-d" href="/downloads/S4S-User-Manual.pdf">Download the PDF manual</a></p>
-    </div>''')
     body += '\n' + section('What It Means for You', 'Why It Matters to Your Committee', cards([
         ('calendar', 'Bills on time', 'Billing runs on a fixed schedule, so members get their bills when they expect them.', None),
         ('search', 'Fewer audit remarks', 'Consistent interest, reconciled banks and complete registers mean shorter audit reports.', None),

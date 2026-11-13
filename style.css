@@ -237,15 +237,3 @@ footer a:hover{color:var(--gold-l)}
   .menu-btn{display:grid}
 }
 .nav-links a,.brand-name,.brand-sub{white-space:nowrap}
-/* S4S user guide */
-.g-wrap{display:grid;grid-template-columns:240px 1fr;gap:36px;align-items:start}
-.g-toc{display:block!important;position:sticky;top:90px;max-height:calc(100vh - 110px);overflow:auto;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;font-size:.92rem}
-.g-toc ol{display:block!important;list-style:none;margin:6px 0 0;padding:0}.g-toc li{display:block}.g-toc li{margin:4px 0}.g-toc a{color:var(--text);text-decoration:none}.g-toc a:hover,.g-toc a.on{color:var(--maroon);font-weight:700}
-.g-main{min-width:0}.g-main h2{margin-top:34px}.g-lbl{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:12px 0 4px}
-.g-scr{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 22px;margin:16px 0;scroll-margin-top:90px}.g-scr h3{margin:0 0 6px}
-.g-what{margin:0 0 4px}.g-mr{color:var(--muted);margin:0 0 6px}.g-steps{padding-left:22px;margin:4px 0}.g-steps li{margin:4px 0}.g-list{padding-left:20px}
-.g-btns{width:100%;border-collapse:collapse;font-size:.92rem;margin:4px 0}.g-btns td{border:1px solid var(--border);padding:6px 10px;vertical-align:top}.g-btns .g-b{width:36%;font-weight:600;white-space:normal}
-.g-jump{font-size:.9rem;line-height:2}.g-jump a{white-space:nowrap}.g-dl{margin:6px 0 18px}.g-cards .card p.small{color:var(--maroon);font-weight:600;margin:6px 0 0}
-a.btn-maroon,.prose a.btn-maroon{color:#fff!important;text-decoration:none}a.btn-outline-d{text-decoration:none;border:2px solid var(--maroon);color:var(--maroon);background:transparent}a.btn-outline-d:hover{background:var(--maroon);color:#fff}
-kbd{background:var(--bg-alt);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:.85rem}
-@media(max-width:860px){.g-wrap{grid-template-columns:1fr;gap:16px}.g-toc{position:static}.g-scr{padding:14px 14px}.g-btns .g-b{width:42%}}
