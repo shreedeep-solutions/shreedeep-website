@@ -8,6 +8,7 @@ from pages_services import airoli, services
 from pages_guides import guides
 from pages_tools import tools, downloads
 from pages_other import marathi, software
+from pages_s4s_guide import s4s_guide, GUIDE_CSS
 
 TODAY = datetime.date.today().isoformat()
 
@@ -20,8 +21,14 @@ def write(path, html_text):
         f.write(html_text)
     return rel
 
-generated = [airoli()] + services() + guides() + [tools(), downloads(), marathi(), software()]
+generated = [airoli()] + services() + guides() + [tools(), downloads(), marathi(), software()] + s4s_guide()
 files = [write(p, h) for p, h in generated]
+
+# user-guide styles (added once to style.css)
+css = open('style.css', encoding='utf-8').read()
+if '/* S4S user guide */' in css:
+    css = css.split('\n/* S4S user guide */')[0].rstrip('\n') + '\n'
+open('style.css', 'w', encoding='utf-8').write(css + GUIDE_CSS.lstrip('\n') if css.endswith('\n') else css + '\n' + GUIDE_CSS.lstrip('\n'))
 
 # City pages: keep their content, refresh shared chrome
 CITY = {'housing-society-accounting-navi-mumbai.html': '', 'housing-society-accounting-thane.html': '', 'housing-society-accounting-mumbai.html': ''}
@@ -50,7 +57,7 @@ open(f, 'w', encoding='utf-8').write(s)
 
 # Sitemap
 urls = ['/', '/mr/', '/society-accountant-airoli.html'] + [p for p, _ in AREA_PAGES[1:4]] + [p for p, _ in SERVICE_PAGES] + \
-       ['/guides/'] + [g[0] for g in __import__('pages_guides').GUIDES] + ['/tools.html', '/downloads.html']
+       ['/guides/'] + [g[0] for g in __import__('pages_guides').GUIDES] + ['/tools.html', '/downloads.html', '/software.html'] + [p for p, _ in s4s_guide()]
 seen = []
 for u in urls:
     if u not in seen:
