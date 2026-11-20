@@ -1321,6 +1321,8 @@ form.addEventListener('submit', async e => {
   e.preventDefault();
   if (!validate(3)) return;
   const d = collect();
+  // also put the enquiry straight into the S4S Leads pipeline (firm desk); the email below is sent as before
+  try { fetch('https://asia-southeast1-mysocietybooks.cloudfunctions.net/webLead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: d.name, society: d.society, phone: d.phone, email: d.email === '-' ? '' : d.email, area: d.address, flats: d.total, service: d.services, message: (d.role !== '-' ? d.role + ' · ' : '') + d.details, website: (document.querySelector('#estForm [name="botcheck"]') || {}).checked ? '1' : '' }) }).catch(() => { }); } catch (e) { }
   msg.className = 'form-msg';
   const btn = $('#submitBtn');
   btn.disabled = true;
